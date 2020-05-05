@@ -1,0 +1,32 @@
+
+
+<div>
+<h1>Dobro dosli</h1>
+</div>
+
+
+
+
+
+  <div style ="width:1000px ; height:400px ; position:relative; margin:auto; " [ngSwitch]="selected">
+    <img *ngSwitchCase="'prva'" src="../../assets/slika4.jpg" style="width: 100%; height:400px">
+    <img *ngSwitchCase="'druga'" src="../../assets/slika3.jpg" style="width: 100%; height:400px">
+   <img *ngSwitchCase="'treca'" src="../../assets/slika2.jpg" style="width:100%; height:400px">
+
+  </div>
+<div>
+  <button class = "dot" *ngFor="let s of slike" (click)="setValue(s)"></button>
+</div>
+
+
+<div>
+  <p>
+    Na nasem sajtu mozete rezervisati karte za sve svirke u Beogradu.
+    Da biste mogli da izvrsite rezervaciju morate imati otvoren nalog na nasem sajtu.
+    Ukoliko nemate nalog registrujte se klikom na<b> Registruj se </b> </p>
+    <br>
+    Ukoliko zelite da se informisete o koncertima i muzickim desavanjima na splavovima
+    kliknite na sliku onoga sto vas zanima.
+
+
+</div>
