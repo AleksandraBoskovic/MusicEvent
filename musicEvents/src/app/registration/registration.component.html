@@ -1,0 +1,19 @@
+
+<div>
+  Ime
+  <input type="text" #name>
+  <span class="error">{{errorMessageName}}</span>
+  <br>
+  Prezime
+  <input type="text" #surname>
+  <br>
+  Username:
+  <input type="text" #username>
+</div>
+<button (click)="onSubmit(name.value,surname.value,username.value)"> Sacuvaj</button>
+
+
+<p *ngIf="majinaPromenljiva">{{ime}}</p>
+<p *ngIf="majinaPromenljiva"> {{prezime}}</p>
+<p *ngIf="majinaPromenljiva"> {{user}}</p>
+

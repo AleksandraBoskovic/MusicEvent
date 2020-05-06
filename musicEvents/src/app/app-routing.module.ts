@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TypeScriptComponent } from './type-script/type-script.component';
-
-
+import {LogInComponent} from './log-in/log-in.component';
+import {RegistrationComponent} from './registration/registration.component';
 const routes: Routes = [
-  { path: 'type-script', component: TypeScriptComponent },
+  { path: 'logIn', component: LogInComponent  },
+  { path: 'registration', component: RegistrationComponent  },
   {
     path: '',
-    redirectTo: '/type-script',
+    redirectTo: '/logIn',
     pathMatch: 'full'
   },
-
 ];
 
 @NgModule({
