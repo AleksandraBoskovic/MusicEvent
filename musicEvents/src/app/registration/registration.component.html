@@ -6,14 +6,23 @@
   <br>
   Prezime
   <input type="text" #surname>
+  <span class="error">{{errorMessageSurname}}</span>
   <br>
-  Username:
+  Korisnicko ime:
   <input type="text" #username>
+  <span class="error">{{errorMessageUsername}}</span>
+  <br>
+  Lozinka:
+  <input type="text" #password>
+  <span class="error">{{errorMessagePassword}}</span>
+  <br>
+  Ponovo unesi lozinku:
+  <input type="text" #passwordAgain>
+  <span class="error">{{errorMessagePassword2}}</span>
+  <br>
 </div>
-<button (click)="onSubmit(name.value,surname.value,username.value)"> Sacuvaj</button>
+<button (click)="onSubmit(name.value,surname.value,username.value,password.value,passwordAgain.value)"> Sacuvaj</button>
 
+{{korisnik}}
 
-<p *ngIf="majinaPromenljiva">{{ime}}</p>
-<p *ngIf="majinaPromenljiva"> {{prezime}}</p>
-<p *ngIf="majinaPromenljiva"> {{user}}</p>
 

@@ -1,0 +1,29 @@
+.btn1{
+    background-color: #00565B;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn2{
+    background-color: #00565B;
+    color: white;
+    padding: 10px 28px;
+    margin: 4px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.form-group{
+    text-align: center;
+}
+.showLabel{
+    color: red;
+}
