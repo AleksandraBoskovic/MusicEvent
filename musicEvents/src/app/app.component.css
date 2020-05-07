@@ -7,12 +7,14 @@ nav {
   flex-direction: column;
   background:#292b2e;
   height: 100vh;
-  width: 215px;
+  width: 200px;
   position: fixed;
+  text-align: center;
+
 }
 
 router-outlet {
-  margin-left: 215px;
+  margin-left: 30%;
 }
 
 a {

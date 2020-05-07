@@ -1,12 +1,15 @@
 body {
   text-align: center;
   align-items: center;
+
 }
 div {
 
   text-align: center;
   align-items:center;
   align-content: center;
+  background-color: black;
+  color: bisque
 
 }
 
@@ -28,4 +31,7 @@ div {
 h1 {
   color:white;
   font-size: 40px;
+}
+.centar {
+  background-color: black;
 }

@@ -1,3 +1,7 @@
-.error { color:#1abc9c;
+.error { color:#a01717;
   font-size:16px;}
 
+body {
+  text-align: center;
+  align-items: center;
+}

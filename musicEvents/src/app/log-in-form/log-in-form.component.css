@@ -27,3 +27,8 @@
 .showLabel{
     color: red;
 }
+
+div {
+  background-color: black;
+  color: white;
+}
