@@ -1,10 +1,17 @@
 <div class="form-group">
-    <button *ngIf="showButton;
+    <button style="width:15%" *ngIf="showButton;
     else dugmeJeIskljuceno"
-    (click)="onPrijaviSe()" class="btn1">PRIJAVI SE</button>
+    (click)="onPrijaviSe()" >PRIJAVI SE</button>
+
+    <button style="width:15%" *ngIf="showButton">REGISTRUJ SE</button>
+
+
+
     <ng-template #dugmeJeIskljuceno>
  <div *ngIf="successLog">
-   
+    <label *ngIf="showUser2" class = "showLabel">Oba polja su obavezna!</label>
+    <label *ngIf="showUser3" class = "showLabel">Pogresan username ili password!</label>
+    <br>
       <label>username:</label>
       <br>
        <input type="text"
@@ -21,14 +28,13 @@
                      #pass>
         <br>
         <br>
-        <button class="btn2" 
+        <button
         (click)="onLogIn(user.value, pass.value)">LOG IN</button>
  </div>
     </ng-template>
     <p *ngIf="showUser"> {{username}} </p>
     <p *ngIf="showUser"> {{password}} </p>
-    
-    <label *ngIf="showUser2" class = "showLabel">Oba polja su obavezna!</label>
-    <label *ngIf="showUser3" class = "showLabel">Pogresan username ili password!</label>
+
+
    </div>
 

@@ -1,0 +1,12 @@
+<div style="width:1000px ; height:400px ; position:relative; margin:auto; " [ngSwitch]="selected">
+    <img *ngSwitchCase="'tehno'" src="../../assets/giphy.gif" style="width: 100%; height:400px">
+    <img *ngSwitchCase="'dance'" src="../../assets/giphy (1).gif" style="width: 100%; height:400px">
+    <img *ngSwitchCase="'pop'" src="../../assets/giphy (2).gif" style="width:100%; height:400px">
+
+  </div>
+  <audio controls>
+    <source src="../../assets/maja.mp3" type="audio/mpeg">
+  </audio>
+  <div>
+    <button class="dot" *ngFor="let t of musicType" (click)="setValue(t)"></button>
+  </div>

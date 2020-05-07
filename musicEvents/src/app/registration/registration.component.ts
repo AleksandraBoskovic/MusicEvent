@@ -9,11 +9,11 @@ import { equal } from 'assert';
 })
 export class RegistrationComponent implements OnInit {
   user: Array<User> = [];
-  errorMessageName = '*';
-  errorMessageSurname = '*';
-  errorMessageUsername = '*';
-  errorMessagePassword = '*';
-  errorMessagePassword2 = '*';
+  errorMessageName = '';
+  errorMessageSurname = '';
+  errorMessageUsername = '';
+  errorMessagePassword = '';
+  errorMessagePassword2 = '';
   korisnik: string;
   constructor() { }
 
@@ -77,7 +77,7 @@ return false;
       this.errorMessageUsername = 'Obavezno polje';
       return false;
     }
-    if (username.length < 6 && username.length > 12) {
+    if (username.length < 6 || username.length > 12) {
       this.errorMessageUsername = 'Korisnicko ime moze biti duzine 6 do 12 karaktera';
       return false;
     }

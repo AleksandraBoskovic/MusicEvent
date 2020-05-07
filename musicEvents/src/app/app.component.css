@@ -1,21 +1,16 @@
-:host {
-  display: flex;
-}
-
 nav {
   display: flex;
   flex-direction: column;
   background:#292b2e;
   height: 100vh;
-  width: 200px;
+  width: 10%;
   position: fixed;
   text-align: center;
-
 }
 
-router-outlet {
-  margin-left: 30%;
-}
+/* router-outlet {
+  align-content: center;
+} */
 
 a {
   color: #eee;

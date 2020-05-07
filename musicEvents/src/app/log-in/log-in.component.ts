@@ -6,17 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
-  slike = ['prva','druga','treca'];
 
 
-  selected: String = 'prva';
   constructor() { }
 
   ngOnInit() {
   }
 
 
-  setValue(people: string): void {
-    this.selected = people;
-  }
 }
