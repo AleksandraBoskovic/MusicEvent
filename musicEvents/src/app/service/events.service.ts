@@ -9,7 +9,9 @@ export class EventsService {
   private events: Event[];
 
   constructor() {
-    this.events = [new Event('Beer fest', 'Usce', '20.08.2020', 'rok', 'da', '0',
+    this.events = [new Event('Beer fest', 'Usce', '20.08.2020', 'rok', 'jeste', '0',
+      'koncert', 'Riblja corba', '10000'), new Event('Ceca', 'Usce', '20.08.2020', 'pop', 'nije', '0',
+      'koncert', 'Riblja corba', '10000'),new Event('Sasa Kovacevic', 'Usce', '12.05.2020', 'pop', 'jeste', '0',
       'koncert', 'Riblja corba', '10000')];
   }
 

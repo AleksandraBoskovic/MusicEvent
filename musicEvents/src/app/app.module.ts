@@ -8,6 +8,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LogInFormComponent } from './log-in-form/log-in-form.component';
 import { GiphyGalleryComponent } from './giphy-gallery/giphy-gallery.component';
 import { AdminComponent } from './admin/admin.component';
+import { FiltersComponent } from './filters/filters.component';
+import { HomeComponent } from './home/home.component';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { AdminComponent } from './admin/admin.component';
     RegistrationComponent,
     LogInFormComponent,
     GiphyGalleryComponent,
-    AdminComponent
+    AdminComponent,
+    FiltersComponent,
+    HomeComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="centar">
+  <app-giphy-gallery [selected]="currentType">
+  </app-giphy-gallery>
+<br>
+<button *ngFor = "let p of types" (click)="changeToDance(p)"> {{ p }} </button>
+
+<br>
+<br>
+<br>
+<br>
+<div class="centar">
+<app-event *ngFor="let d of events" [event]="d"></app-event>
+</div>
+</div>
