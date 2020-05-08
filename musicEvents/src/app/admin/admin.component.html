@@ -1,0 +1,116 @@
+    <div class="admin">
+    <br>
+    <img class="pic" style="width:350px ; height:350px" src="./../../assets/mgiphy4.gif">
+    <img class="pic2" style="width:350px ; height:350px" src="./../../assets/mgiphy.gif">
+    <label class="labela"><strong> SEKCIJA ZA UNOS PODATAKA </strong></label>
+    <br>
+    <br>
+    <br>
+    <label>Naziv dogadjaja</label>
+    <br>
+    <input type="text" #u_naziv>
+    <br>
+    <label>Adresa odrzavanja</label>
+    <br>
+    <input type="text" #u_adresa>
+    <br>
+    <label>Datum odrzavanja</label>
+    <br>
+    <input type="text" #u_datum>
+    <br>
+    <label>Vrsta muzike</label>
+    <br>
+    <input type="text" #u_muzika>
+    <br>
+    <label>Slobodan ulaz</label>
+    <br>
+    <input type="text" #u_ulaz>
+    <br>
+    <label>Cena dogadjaja</label>
+    <br>
+    <input type="text" #u_cena>
+    <br>
+    <label>Vrsta dogadjaja</label>
+    <br>
+    <input type="text" #u_dogadjaj>
+    <br>
+    <label>Izvodjac</label>
+    <br>
+    <input type="text" #u_izvodjac>
+    <br>
+    <label>Kapacitet</label>
+    <br>
+    <input type="text" #u_kapacitet>
+    <br>
+    <br>
+    <button (click)="onSaveEvent(u_naziv.value,u_adresa.value,u_datum.value,u_muzika.value,u_ulaz.value,u_cena.value,u_dogadjaj.value,u_izvodjac.value, u_kapacitet.value)" class="btn"><strong>UPISI PODATKE</strong></button>
+    <br>
+    <br>
+   <!-- <p> {{dogadjaj}} </p>
+    <br>
+    <p> {{adresa}} </p>
+    <br>
+    <p> {{datum}} </p>
+    <br>
+    <p> {{muzika}} </p>
+    <br>
+    <p> {{slobodanulaz}} </p>
+    <br>
+    <p> {{cena}} </p>
+    <br>
+    <p> {{vrstadogadjaja}} </p>
+    <br>
+    <p> {{izvodjac}} </p> -->
+    <br>
+    <label class="labela"><strong> SEKCIJA ZA BRISANJE PODATAKA </strong></label>
+    <br>
+    <br>
+    <br>
+    <label>Naziv dogadjaja</label>
+    <br>
+    <input type="text" #b_naziv>
+    <br>
+    <label>Adresa odrzavanja</label>
+    <br>
+    <input type="text" #b_adresa>
+    <br>
+    <label>Datum odrzavanja</label>
+    <br>
+    <input type="text" #b_datum>
+    <br>
+    <br>
+    <button (click)="onDeleteEvent(b_naziv.value,b_adresa.value,b_datum.value)" class="btn"><strong>OBRISI PODATKE</strong></button>
+    <br>
+    <br>
+    <br>
+    <label class="labela"><strong> SEKCIJA ZA IZMENU PODATAKA </strong></label>
+    <br>
+    <br>
+    <br>
+    <label>Naziv dogadjaja</label>
+    <br>
+    <input type="text" #i_naziv>
+    <br>
+    <label>Datum odrzavanja</label>
+    <br>
+    <input type="text" #i_datum>
+    <br>
+    <label>Vrsta muzike</label>
+    <br>
+    <input type="text" #i_muzika>
+    <br>
+    <label>Cena dogadjaja</label>
+    <br>
+    <input type="text" #i_cena>
+    <br>
+    <label>Izvodjac</label>
+    <br>
+    <input type="text" #i_izvodjac>
+    <br>
+    <br>
+    <button (click)="onChangeEvent(i_naziv.value,i_datum.value,i_muzika.value,i_cena.value,i_izvodjac.value)" class="btn"><strong>IZMENI PODATKE</strong></button>
+    <br><br><br>
+    
+    </div>
+    
+    

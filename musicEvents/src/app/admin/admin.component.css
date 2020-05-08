@@ -1,0 +1,72 @@
+div.admin{
+    background-color: rgb(255, 191, 0);
+}
+.admin{
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: rgb(20, 20, 12);
+    
+   
+ 
+}
+.btn{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    font-family: Georgia, serif;
+    color: black;
+    background-color: #00565B;
+    border: none;
+    
+    border-radius: 8px;
+ 
+    width: 20%;
+    
+    box-shadow: 0 2px #999;
+    outline: none;
+    text-decoration: none;
+}
+.btn:hover{
+    background-color: rgb(153, 102, 0);
+}
+.btn:active {
+  background-color:rgb(153, 102, 0);
+  box-shadow: 0 2px #666;
+    transform: translateY(4px);
+ 
+}
+.labela{
+    font-size: 22px;
+    color: black;
+}
+.pic{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z: -1;
+
+}
+.pic2{
+    position: fixed;
+    top: 300px;
+    right: 0px;
+    z: -1;
+
+}
+.kalendar{
+    color: black;
+    background-color: white;
+    border: none;
+    margin: 0px;
+    outline: none;
+    width: 2%;
+    margin: 0px;
+    display: inline-block;
+}
+.lbl{
+    width: 10%;
+    padding-left: 31px;
+    padding-right: 31px;
+}

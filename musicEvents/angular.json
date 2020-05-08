@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "musicEvents"
+    }
+  },
+  "defaultProject": "musicEvents",
+  "cli": {
+    "analytics": false
+  }
 }
