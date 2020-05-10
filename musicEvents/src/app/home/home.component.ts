@@ -8,20 +8,31 @@ import { EventsService } from '../service/events.service';
 })
 export class HomeComponent implements OnInit {
 
-  events: Array<Event> ;
+  events: Array<Event>;
 
-  types = ['pop','rok','tehno','domaca','dance'];
+
+
+
   currentType = 'tehno';
 
   constructor(private eventService: EventsService) {
     this.events = this.eventService.getEvents();
-   }
+  }
 
   ngOnInit() {
+
   }
 
-  changeToDance(newType: string): void {
-    this.currentType = newType;
+  changeType(currentType: string) {
+
+    this.currentType = currentType;
+
+    this.events = this.eventService.filterEvents(this.currentType);
+
+
   }
+
+
+
 
 }

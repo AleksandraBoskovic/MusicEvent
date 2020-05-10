@@ -1,1 +1,5 @@
+<button *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
+<br>
+<button (click)="filtriraj($event)">Filtriraj</button>
 
+{{currentType}}

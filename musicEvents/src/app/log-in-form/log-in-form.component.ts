@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TisketsService } from './../service/tiskets.service';
 
 @Component({
   selector: 'app-log-in-form',
@@ -18,7 +19,7 @@ export class LogInFormComponent implements OnInit {
 
   usernamePasswordList = [['Maja', 'majga'], ['Aleksandra', 'alebo'], ['Marica', 'marbo'], ['Milos', 'milmi']];
 
-  constructor() { }
+  constructor(private ticketsService: TisketsService) { }
 
   ngOnInit() {
   }
@@ -58,8 +59,8 @@ export class LogInFormComponent implements OnInit {
 
     this.userExist = false;
 
-
-
+    this.ticketsService.setPassword(this.password);
+    this.ticketsService.setUsername(this.username);
   }
 
 }

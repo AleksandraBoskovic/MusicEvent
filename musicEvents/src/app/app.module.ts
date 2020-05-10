@@ -11,6 +11,8 @@ import { AdminComponent } from './admin/admin.component';
 import { FiltersComponent } from './filters/filters.component';
 import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
+import { DetailsComponent } from './details/details.component';
+import { MyticketsComponent } from './mytickets/mytickets.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { EventComponent } from './event/event.component';
     AdminComponent,
     FiltersComponent,
     HomeComponent,
-    EventComponent
+    EventComponent,
+    DetailsComponent,
+    MyticketsComponent
   ],
   imports: [
     BrowserModule,

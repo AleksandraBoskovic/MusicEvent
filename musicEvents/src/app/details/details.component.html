@@ -1,0 +1,28 @@
+
+<div class="details">
+
+  <a [routerLink]="['/home']"> <img class="pic" style="width:50px ;
+  height:50px" src="./../../assets/strelica.png"></a>
+<br>
+<p><strong>Dobrodoslicu Vam zeli {{naziv}}!</strong></p>
+<p>
+<br>
+<br>Dana {{datum}} na adresi {{adresa}} imacete cast da uzivate u
+{{muzika}} muzici.
+<br>Na {{vrsta_dogadjaja}} cete uzivati u numerama {{izvodjac}}.
+<br> Za ovu manifestaciju ulaz {{slobodan_ulaz}} slobodan.
+<br> Cena karte je: {{cena}}
+
+</p>
+<br>
+<label #broj_karata>Postovani, unesite kolicinu karata:</label>
+<br>
+<br>
+<input type = "text" >
+<br><br>
+<button class = "btn"  (click)="dodajKartu()" >REZERVISI</button>
+<br>
+<br>
+<p><strong>HVALA NA UKAZANOM POVERENJU!</strong></p>
+
+</div>

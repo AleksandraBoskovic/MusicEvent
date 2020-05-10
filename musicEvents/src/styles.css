@@ -19,7 +19,8 @@ div.centar {
   position: relative;
   width: 55%;
   align-content: center;
-  background:black;
+ background:black;
+
   text-align: center;
 }
 

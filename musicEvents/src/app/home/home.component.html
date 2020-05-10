@@ -2,9 +2,10 @@
   <app-giphy-gallery [selected]="currentType">
   </app-giphy-gallery>
 <br>
-<button *ngFor = "let p of types" (click)="changeToDance(p)"> {{ p }} </button>
+<app-filters (currentType)="changeType($event)" ></app-filters>
 
 <br>
+{{currentType}}
 <br>
 <br>
 <br>

@@ -3,7 +3,7 @@
     else dugmeJeIskljuceno"
     (click)="onPrijaviSe()" >PRIJAVI SE</button>
 
-    <button style="width:15%" *ngIf="showButton">REGISTRUJ SE</button>
+   <a [routerLink]="['/registration']"><button  style="width:15%" *ngIf="showButton">REGISTRUJ SE</button></a>
 
 
 

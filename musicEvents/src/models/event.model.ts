@@ -1,14 +1,14 @@
 export class Event {
-    
- 
-  
+
+
+
   constructor(private _event: string, private _adress: string, private _date: string,
      private _typeOfMusic: string, private _freeEntry: string, private  _price: string,
       private _typeOfEvent: string, private _performer: string, private _capacity: string){
 
 
   }
-  
+
   get event(): string {
     return this._event;
   }
@@ -39,7 +39,7 @@ export class Event {
   }
   set event(value: string){
     this._event = value;
-  } 
+  }
   set adress(value: string){
     this._adress =  value;
   }
@@ -64,7 +64,6 @@ export class Event {
   set capacity(value: string){
     this._capacity = value;
   }
-  
-  
+
+
   }
-  

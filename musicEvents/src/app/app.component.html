@@ -3,6 +3,12 @@
   <a routerLink="/registration" routerLinkActive="active">Registracija</a>
   <a routerLink="/admin" routerLinkActive="active">Admin strana</a>
   <a routerLink="/home" routerLinkActive="active">Pocetna</a>
+  <a routerLink="/details" routerLinkActive="active">Detalji</a>
+  <a routerLink="/myTickets" routerLinkActive="active">Moje karte</a>
 </nav>
 
+
+<a [routerLink]="['/logIn']">
+<button style="position:fixed;bottom: 50%;width:9.5%;left: 0px;" (click)="logOut()">Log out</button>
+</a>
 <router-outlet #routerOutlet="outlet"></router-outlet>
