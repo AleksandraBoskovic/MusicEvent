@@ -6,9 +6,9 @@ div.admin{
     font-family: Georgia, serif;
     font-size: 18px;
     color: rgb(20, 20, 12);
-    
-   
- 
+
+
+
 }
 .btn{
     display: inline-block;
@@ -19,11 +19,11 @@ div.admin{
     color: black;
     background-color: #00565B;
     border: none;
-    
+
     border-radius: 8px;
- 
+
     width: 20%;
-    
+
     box-shadow: 0 2px #999;
     outline: none;
     text-decoration: none;
@@ -35,7 +35,7 @@ div.admin{
   background-color:rgb(153, 102, 0);
   box-shadow: 0 2px #666;
     transform: translateY(4px);
- 
+
 }
 .labela{
     font-size: 22px;
@@ -43,14 +43,14 @@ div.admin{
 }
 .pic{
     position: fixed;
-    top: 0px;
+    top: 23px;
     right: 0px;
     z: -1;
 
 }
 .pic2{
     position: fixed;
-    top: 300px;
+    top: 323px;
     right: 0px;
     z: -1;
 

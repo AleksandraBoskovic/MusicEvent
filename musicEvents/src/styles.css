@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
-  margin: auto;
-  /* padding: 0; */
+   margin: auto;
+   /* padding: 0; */
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -12,11 +12,13 @@ body {
   background-size: cover;
   color: white;
   text-align: left;
+
 }
 
 div.centar {
-  margin:auto;
   position: relative;
+  /* top:0px; */
+   margin:auto;
   width: 55%;
   align-content: center;
  background:black;
@@ -38,10 +40,10 @@ h2 {
 } */
 
 div:not([class]) {
-  margin: 10px;
+   margin: 10px;
   box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 16px;
+   padding: 16px;
   border-radius: 4px;
   background:black;
   color:whitesmoke;
@@ -57,7 +59,7 @@ p:not([class]) {
 button:not([class]) {
   color: #fff;
   cursor: pointer;
-  background-color: #00565B;
+   background-color: #00565B;
   box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   box-sizing: border-box;
   position: relative;
@@ -86,7 +88,8 @@ button:not([class]) {
 }
 
 button:not([class]):hover {
-  background-color:#330a00;
+  /* background-color:#330a00; */
+  background-color:rgb(255, 166, 0);
   color: whitesmoke;
 }
 

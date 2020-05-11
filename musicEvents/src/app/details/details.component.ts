@@ -20,6 +20,8 @@ export class DetailsComponent implements OnInit {
   izvodjac: string;
   kapacitet: string;
 
+
+
  constructor(private _interactionService: InteractionService,private ticketsService: TisketsService){
 
  }

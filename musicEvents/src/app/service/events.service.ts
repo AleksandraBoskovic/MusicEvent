@@ -7,14 +7,14 @@ import { Event } from '../../models/event.model';
 export class EventsService {
 
   private events: Event[];
-
+  // private posalji: Event[];
 
 
   constructor() {
     this.events = [new Event('Beer fest', 'Usce', '20.08.2020', 'rok', 'jeste', '0',
       'koncert', 'Riblja corba', '10000'), new Event('Ceca Music', 'Usce', '20.08.2020', 'pop', 'nije', '3000',
-      'koncert', 'Ceca', '10000'),new Event('Humanitarni koncert', 'Sava centar', '12.05.2020', 'pop', 'jeste', '2000',
-      'koncert', 'Sasa Kovacevic', '10000')];
+        'humanitarni koncert', 'Ceca', '10000'), new Event('Humanitarni koncert', 'Sava centar', '12.05.2020', 'pop', 'jeste', '2000',
+          'koncert', 'Sasa Kovacevic', '10000')];
 
   }
 
@@ -58,9 +58,30 @@ export class EventsService {
     return this.events;
   }
 
-  filterEvents(type: string): Event[] {
+  filterEvents(type: string, typeEvent: string, typeEntrance: string): Event[] {
 
-    return this.events.filter((event)=>event.typeOfMusic===type);
+     return this.events.filter((event) => event.typeOfMusic === type);
+
+    // this.posalji = this.events;
+
+    // this.posalji.filter((event) => event.typeOfMusic === type);
+    // for (let i of this.posalji) {
+    //   console.log(i);
+    // }
+    // if (typeEvent !== '') {
+    //   this.posalji.filter((event) => event.typeOfEvent === typeEvent);
+    //   console.log('uslo event');
+    //   for (let i of this.posalji) {
+    //     console.log(i);
+    //   }
+    // }
+    // if (typeEntrance !== '') {
+    //    this.posalji.filter((event) => event.freeEntry === typeEntrance);
+    // }
+
+    // console.log('uslo');
+
+    // return this.posalji;
   }
 
 

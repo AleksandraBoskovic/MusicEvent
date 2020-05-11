@@ -1,5 +1,28 @@
-<button *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
+<div style="text-align: left">
 <br>
-<button (click)="filtriraj($event)">Filtriraj</button>
+Odaberite vrstu muzike:
+<br>
+<br>
+<button [ngStyle]="promeni(p)" *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
+<br>
+<br>
+Odaberite tip dogadjaja:
+<br>
+<br>
+<button [ngStyle]="promeni(p)" *ngFor = "let p of typesEvent" (click)="changeTypeEventTo(p)"> {{ p }} </button>
+<br>
+<br>
+Ulaz slobodan:
+<br>
+<br>
+<button [ngStyle]="promeni(p)" *ngFor = "let p of typeEntrance" (click)="changeTypeEntrance(p)"> {{ p }} </button>
 
-{{currentType}}
+</div>
+
+<div  style="text-align: center">
+<button (click)="filtriraj($event)">Filtriraj dogadjaje</button>
+<button (click)="allEvents($event)">Prikazi sve dogadjaje u ponudi</button>
+<br>
+{{currentType}},{{currentTypeEvent}},{{currentTypeEntrance}}
+
+</div>

@@ -2,10 +2,10 @@
   <app-giphy-gallery [selected]="currentType">
   </app-giphy-gallery>
 <br>
-<app-filters (currentType)="changeType($event)" ></app-filters>
+<app-filters (currentFilter)="changeType($event)"  (giveAll)="giveAll($event)" ></app-filters>
 
 <br>
-{{currentType}}
+{{currentType}},{{currentTypeEvent}},{{currentTypeEntrance}}
 <br>
 <br>
 <br>

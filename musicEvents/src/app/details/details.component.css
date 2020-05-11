@@ -1,5 +1,5 @@
 div.details{
-  background-color: rgb(255, 212, 128);
+background-color: rgb(255, 212, 128);
 text-align: center;
 color: black;
 
@@ -40,6 +40,6 @@ box-shadow: 0 2px #666;
 }
 .pic{
   position: fixed;;
-  top: 0px;
+  top: 23px;
   left:10%;
 }
