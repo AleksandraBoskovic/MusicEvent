@@ -4,25 +4,34 @@
   <a [routerLink]="['/home']"> <img class="pic" style="width:50px ;
   height:50px" src="./../../assets/strelica.png"></a>
 <br>
-<p><strong>Dobrodoslicu Vam zeli {{naziv}}!</strong></p>
+<p><strong>Dobrodoslicu Vam zeli {{event.event}}!</strong></p>
 <p>
 <br>
-<br>Dana {{datum}} na adresi {{adresa}} imacete cast da uzivate u
-{{muzika}} muzici.
-<br>Na {{vrsta_dogadjaja}} cete uzivati u numerama {{izvodjac}}.
-<br> Za ovu manifestaciju ulaz {{slobodan_ulaz}} slobodan.
-<br> Cena karte je: {{cena}}
+<br>Dana {{event.date}} na adresi {{event.adress}} imacete cast da uzivate u
+{{event.typeOfMusic}} muzici.
+<br>Na {{event.typeOfEvent}} cete uzivati u numerama {{event.performer}}.
+<br> Za ovu manifestaciju ulaz {{event.performer}} slobodan.
+<br><p *ngIf="capacity; else full"> U prodaji je preostalo jos {{event.capacity}} karata.</p>
+  <ng-template #full>
+    <p> Nema vise karata u prodaji! </p>
+    </ng-template>
 
-</p>
+<br> Cena karte je: {{event.price}}
+<div style="background-color: rgb(255, 212, 128) ;color :black"  *ngIf="capacity">
 <br>
 <label #broj_karata>Postovani, unesite kolicinu karata:</label>
 <br>
 <br>
-<input type = "text" >
+<input  type = "text" #number>
 <br><br>
-<button class = "btn"  (click)="dodajKartu()" >REZERVISI</button>
+{{number.value}}
+{{event.capacity}}
+
+<button class = "btn"  (click)="dodajKartu(number.value)" >REZERVISI</button>
 <br>
 <br>
 <p><strong>HVALA NA UKAZANOM POVERENJU!</strong></p>
-
 </div>
+</div>
+
+

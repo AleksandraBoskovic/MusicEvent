@@ -1,6 +1,7 @@
 <div style="text-align: left">
 <br>
 Odaberite vrstu muzike:
+
 <br>
 <br>
 <button [ngStyle]="promeni(p)" *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
@@ -16,13 +17,26 @@ Ulaz slobodan:
 <br>
 <br>
 <button [ngStyle]="promeni(p)" *ngFor = "let p of typeEntrance" (click)="changeTypeEntrance(p)"> {{ p }} </button>
+<br>
+<br>
+
+
+<div *ngIf="cena">
+    Cena:
+    <br>
+od : <mat-slider #od [max]='10000' [min]='0'[step]='100' (change)="getValueMin($event)" ></mat-slider> {{od.value}}
+
+do: <mat-slider #do  [max]='10000' [min]='0'[step]='100' (change)="getValueMax($event)"></mat-slider> {{do.value}}
+</div>
+<br>
 
 </div>
+
 
 <div  style="text-align: center">
 <button (click)="filtriraj($event)">Filtriraj dogadjaje</button>
 <button (click)="allEvents($event)">Prikazi sve dogadjaje u ponudi</button>
 <br>
-{{currentType}},{{currentTypeEvent}},{{currentTypeEntrance}}
-
+{{this.currentFilter.currentTypeMusic}},{{this.currentFilter.currentTypeEvent}},{{this.currentFilter.currentTypeEntry}}
+,{{this.currentFilter.currentMin}},{{this.currentFilter.currentMax}}
 </div>

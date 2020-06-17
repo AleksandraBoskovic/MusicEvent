@@ -3,22 +3,22 @@
 
   <table style="width:90%">
   <tr>
-      <td style="text-align:left" [ngSwitch]="getTipMuzike()">
+      <td style="text-align:left" [ngSwitch]="event.typeOfMusic">
          <img *ngSwitchCase="'tehno'" class="pic" style="widows:250px; ; height:190px" src="./../../assets/techno.png">
          <img *ngSwitchCase="'pop'" class="pic" style="width:250px; height:190px" src="./../../assets/pop.jpeg">
           <img *ngSwitchCase="'rok'" class="pic" style="width:250px; height:190px" src="./../../assets/rock.jpg">
 
             </td>
   <td style="text-align:center">
-  <label class = "input"> {{getNaziv()}} </label>
+  <label class = "input"> {{event.event}} </label>
   <br>
   <br>
 
-  <label class="input"> {{getDatum()}} </label>
+  <label class="input"> {{event.date}} </label>
   <br>
   <br>
 
-  <label class = "input"> {{getTipMuzike()}} </label>
+  <label class = "input"> {{event.typeOfMusic}} </label>
   <br>
   <br>
 

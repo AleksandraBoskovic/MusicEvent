@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   cena: string;
   vrstadogadjaja: string;
   izvodjac: string;
-  kapacitet: string;
+  kapacitet: number;
 
   constructor(private eventService: EventsService) {
     this.event = this.eventService.getEvents();
@@ -28,7 +28,7 @@ export class AdminComponent implements OnInit {
   }
   onSaveEvent(u_naziv: string, u_adresa: string, u_datum: string,
      u_muzika: string, u_ulaz: string, u_cena: string, u_dogadjaj: string,
-      u_izvodjac: string, u_kapacitet: string) {
+      u_izvodjac: string, u_kapacitet: number) {
 
         this.event = this.eventService.addEvent(u_naziv, u_adresa,
            u_datum, u_muzika, u_ulaz,

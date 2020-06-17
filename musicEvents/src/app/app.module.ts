@@ -13,7 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { EventComponent } from './event/event.component';
 import { DetailsComponent } from './details/details.component';
 import { MyticketsComponent } from './mytickets/mytickets.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSliderModule} from '@angular/material/slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,9 @@ import { MyticketsComponent } from './mytickets/mytickets.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

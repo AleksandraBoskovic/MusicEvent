@@ -1,11 +1,12 @@
 <div class="centar">
-  <app-giphy-gallery [selected]="currentType">
+  <app-giphy-gallery [selected]='currentFilter.currentTypeMusic'>
   </app-giphy-gallery>
 <br>
 <app-filters (currentFilter)="changeType($event)"  (giveAll)="giveAll($event)" ></app-filters>
 
 <br>
-{{currentType}},{{currentTypeEvent}},{{currentTypeEntrance}}
+{{currentFilter.currentTypeMusic}},{{currentFilter.currentTypeEvent}},{{currentFilter.currentTypeEntry}}
+,{{currentFilter.currentMin}} {{currentFilter.currentMax}}
 <br>
 <br>
 <br>

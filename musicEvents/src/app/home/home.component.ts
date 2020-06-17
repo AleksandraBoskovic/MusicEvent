@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from './../../models/event.model';
 import { EventsService } from '../service/events.service';
+import {Filter} from './../../models/filter.model';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,9 +11,14 @@ export class HomeComponent implements OnInit {
 
   events: Array<Event>;
 
-  currentType = 'tehno';
-  currentTypeEntrance : string;
-  currentTypeEvent: string ;
+  currentFilter = new Filter('tehno','','','0','10000');
+
+
+
+
+  // currentType = 'tehno';
+  // currentTypeEntrance : string;
+  // currentTypeEvent: string ;
 
   constructor(private eventService: EventsService) {
     this.events = this.eventService.getEvents();
@@ -22,13 +28,15 @@ export class HomeComponent implements OnInit {
 
   }
 
-  changeType({currentType, currentTypeEvent, currentTypeEntrance}) {
+  changeType(currentFilter: Filter) {
 
-    this.currentType = currentType;
-    this.currentTypeEvent = currentTypeEvent;
-    this.currentTypeEntrance = currentTypeEntrance;
+    // this.currentType = currentType;
+    // this.currentTypeEvent = currentTypeEvent;
+    // this.currentTypeEntrance = currentTypeEntrance;
 
-    this.events = this.eventService.filterEvents(this.currentType,this.currentTypeEvent,this.currentTypeEntrance);
+    this.currentFilter = currentFilter;
+
+    this.events = this.eventService.filterEvents(this.currentFilter);
 
     // for (let i of this.events) {
     //   console.log(i);

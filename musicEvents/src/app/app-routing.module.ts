@@ -6,6 +6,9 @@ import {AdminComponent} from './admin/admin.component';
 import {HomeComponent} from './home/home.component';
 import {DetailsComponent} from './details/details.component';
 import {MyticketsComponent} from './mytickets/mytickets.component';
+
+
+
 const routes: Routes = [
 
   { path: 'logIn', component: LogInComponent  },
