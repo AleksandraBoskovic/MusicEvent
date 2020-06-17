@@ -4,19 +4,19 @@ Odaberite vrstu muzike:
 
 <br>
 <br>
-<button [ngStyle]="promeni(p)" *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
+<button [ngStyle]="change(p)" *ngFor = "let p of types" (click)="changeTypeTo(p)"> {{ p }} </button>
 <br>
 <br>
 Odaberite tip dogadjaja:
 <br>
 <br>
-<button [ngStyle]="promeni(p)" *ngFor = "let p of typesEvent" (click)="changeTypeEventTo(p)"> {{ p }} </button>
+<button [ngStyle]="change(p)" *ngFor = "let p of typesEvent" (click)="changeTypeEventTo(p)"> {{ p }} </button>
 <br>
 <br>
 Ulaz slobodan:
 <br>
 <br>
-<button [ngStyle]="promeni(p)" *ngFor = "let p of typeEntrance" (click)="changeTypeEntrance(p)"> {{ p }} </button>
+<button [ngStyle]="change(p)" *ngFor = "let p of typeEntrance" (click)="changeTypeEntrance(p)"> {{ p }} </button>
 <br>
 <br>
 
@@ -34,7 +34,7 @@ do: <mat-slider #do  [max]='10000' [min]='0'[step]='100' (change)="getValueMax($
 
 
 <div  style="text-align: center">
-<button (click)="filtriraj($event)">Filtriraj dogadjaje</button>
+<button (click)="filterEvents($event)">Filtriraj dogadjaje</button>
 <button (click)="allEvents($event)">Prikazi sve dogadjaje u ponudi</button>
 <br>
 {{this.currentFilter.currentTypeMusic}},{{this.currentFilter.currentTypeEvent}},{{this.currentFilter.currentTypeEntry}}

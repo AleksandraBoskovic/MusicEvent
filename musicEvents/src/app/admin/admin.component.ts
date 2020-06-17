@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Event } from './../../models/event.model';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { EventsService } from '../service/events.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -9,7 +10,7 @@ import { EventsService } from '../service/events.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  event: Array<Event> = [];
+  events: Array<Event> = [];
   adresa: string;
   dogadjaj: string;
   datum: string;
@@ -20,54 +21,135 @@ export class AdminComponent implements OnInit {
   izvodjac: string;
   kapacitet: number;
 
-  constructor(private eventService: EventsService) {
-    this.event = this.eventService.getEvents();
+  public checkoutForm: FormGroup;
+  public checkoutFormDelete: FormGroup;
+  public checkoutFormChange: FormGroup;
+
+  constructor(private eventService: EventsService, private formBuilder: FormBuilder) {
+    this.events = this.eventService.getEvents();
+    this.checkoutForm = this.formBuilder.group({
+      event: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z ]+')]],
+      adress: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z /]+')]],
+      date: ['', [Validators.required, Validators.pattern('[0-9\/]+')]],
+      typeMusic: ['', [Validators.required, Validators.pattern('pop|rok|tehno|domaca|dance')]],
+      freeEntry: ['', [Validators.required, Validators.pattern('jeste|nije')]],
+      price: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+      typeEvent: ['', [Validators.required, Validators.pattern('koncert|humanitarni koncert|svirka|festival|kafana|klub')]],
+      performer: ['', [Validators.required, Validators.pattern('[a-zA-Z ]+')]],
+      capacity: ['', [Validators.required, Validators.pattern('[0-9]+')]]
+    });
+
+    this.checkoutFormDelete = this.formBuilder.group({
+      event: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z ]+')]],
+      adress: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z /]+')]],
+      date: ['', [Validators.required, Validators.pattern('[0-9\/]+')]],
+    });
+
+    this.checkoutFormChange = this.formBuilder.group({
+      event: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z ]+')]],
+      date: ['', [Validators.required, Validators.pattern('[0-9\/]+')]],
+      typeMusic: ['', [Validators.required, Validators.pattern('pop|rok|tehno|domaca|dance')]],
+      freeEntry: ['', [Validators.required, Validators.pattern('jeste|nije')]],
+      price: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+      performer: ['', [Validators.required, Validators.pattern('[a-zA-Z ]+')]],
+    });
+
+
+
   }
 
+  public get event() {
+    return this.checkoutForm.get('event');
+  }
+
+  public get adress() {
+    return this.checkoutForm.get('adress');
+  }
+
+  public get date() {
+    return this.checkoutForm.get('date');
+  }
+
+  public get eventDelete() {
+    return this.checkoutFormDelete.get('event');
+  }
+
+  public get adressDelete() {
+    return this.checkoutFormDelete.get('adress');
+  }
+
+  public get dateDelete() {
+    return this.checkoutFormDelete.get('date');
+  }
+
+  public get eventChange() {
+    return this.checkoutFormChange.get('event');
+  }
+
+
+  public get dateChange() {
+    return this.checkoutFormChange.get('date');
+  }
+
+
+  public get typeMusic() {
+    return this.checkoutForm.get('typeMusic');
+  }
+
+  public get typeMusicChange() {
+    return this.checkoutFormChange.get('typeMusic');
+  }
+
+  public get freeEntry() {
+    return this.checkoutForm.get('freeEntry');
+  }
+  public get price() {
+    return this.checkoutForm.get('price');
+  }
+
+  public get freeEntryChange() {
+    return this.checkoutFormChange.get('freeEntry');
+  }
+  public get priceChange() {
+    return this.checkoutFormChange.get('price');
+  }
+  public get typeEvent() {
+    return this.checkoutForm.get('typeEvent');
+  }
+  public get performer() {
+    return this.checkoutForm.get('performer');
+  }
+
+  public get performerChange() {
+    return this.checkoutFormChange.get('performer');
+  }
+
+
+  public get capacity() {
+    return this.checkoutForm.get('capacity');
+  }
+
+  onAddEvent(data) {
+    this.events = this.eventService.addEvent(this.event.value, this.adress.value,
+      this.date.value, this.typeMusic.value, this.freeEntry.value,
+      this.price.value, this.typeEvent.value, this.performer.value, this.capacity.value);
+  }
   ngOnInit() {
-  }
-  onSaveEvent(u_naziv: string, u_adresa: string, u_datum: string,
-     u_muzika: string, u_ulaz: string, u_cena: string, u_dogadjaj: string,
-      u_izvodjac: string, u_kapacitet: number) {
-
-        this.event = this.eventService.addEvent(u_naziv, u_adresa,
-           u_datum, u_muzika, u_ulaz,
-       u_cena, u_dogadjaj, u_izvodjac, u_kapacitet);
-    /*this.adresa = this.event[0].adress;
-    this.dogadjaj = this.event[0].event;
-    this.datum = this.event[0].date;
-    this.muzika = this.event[0].typeOfMusic;
-    this.slobodanulaz = this.event[0].freeEntry;
-    this.cena = this.event[0].price;
-    this.vrstadogadjaja = this.event[0].typeOfEvent;
-    this.izvodjac = this.event[0].performer;
-    console.log(this.dogadjaj);
-    console.log(this.adresa);
-    console.log(this.datum);
-
-    console.log(this.muzika);
-    console.log(this.slobodanulaz);
-    console.log(this.cena);
-    console.log(this.vrstadogadjaja);
-    console.log(this.izvodjac);*/
-    for (let i of this.event) {
-      console.log(i);
-    }
 
   }
-  onDeleteEvent(b_naziv: string, b_adresa: string, b_datum: string) {
-    this.event = this.eventService.deleteEvent(b_naziv, b_adresa, b_datum);
-    for (let i of this.event) {
-      console.log(i);
-    }
+
+
+  onDeleteEvent(data) {
+    this.events = this.eventService.deleteEvent(this.eventDelete.value,this.adressDelete.value,
+      this.dateDelete.value);
   }
-  onChangeEvent(i_naziv: string, i_datum: string, i_muzika: string, i_cena: string, i_izvodjac: string) {
 
-    this.event = this.eventService.changeEvent(i_naziv, i_datum, i_muzika, i_cena, i_izvodjac);
+  onChangeEvent(data) {
 
-    for (let i of this.event) {
-      console.log(i);
-    }
+    this.events = this.eventService.changeEvent(this.eventChange.value,
+      this.dateChange.value,this.typeMusicChange.value,
+      this.freeEntryChange.value,this.priceChange.value,this.performerChange.value);
+
 
   }
 

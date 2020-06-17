@@ -1,7 +1,9 @@
 export class Filter {
-  constructor(private _currentTypeMusic: string,
-    private _currentTypeEvent: string, private _currentTypeEntry : string,
-     private _minPrice:string ,private _maxPrice:string) {
+  constructor(private _currentTypeMusic: string,private _hasCurrentTypeMusic: boolean,
+    private _currentTypeEvent: string, private _hasTypeEvent: boolean,
+    private _currentTypeEntry: string, private _hasTypeEntry: boolean,
+    private _minPrice: string, private _hasMinPrice : boolean,
+     private _maxPrice: string, private _hasMaxPrice: boolean) {
   }
 
 
@@ -13,6 +15,14 @@ export class Filter {
     this._currentTypeMusic = currentTypeMusic;
   }
 
+  get hasCurrentTypeMusic(): boolean {
+    return this._hasCurrentTypeMusic;
+  }
+
+  set hasCurrentTypeMusic(hasCurrentTypeMusic: boolean) {
+    this._hasCurrentTypeMusic = hasCurrentTypeMusic;
+  }
+
 
   get currentTypeEvent(): string {
     return this._currentTypeEvent;
@@ -22,6 +32,16 @@ export class Filter {
     this._currentTypeEvent = currentTypeEvent;
   }
 
+
+  get hasCurrentTypeEvent(): boolean {
+    return this._hasTypeEvent;
+  }
+
+  set hasCurrentTypeEvent(hasTypeEvent: boolean) {
+    this._hasTypeEvent = hasTypeEvent;
+  }
+
+
   get currentTypeEntry(): string {
     return this._currentTypeEntry;
   }
@@ -29,6 +49,15 @@ export class Filter {
   set currentTypeEntry(currentTypeEntry: string) {
     this._currentTypeEntry = currentTypeEntry;
   }
+
+  get hasCurrentTypeEntry(): boolean {
+    return this._hasTypeEntry;
+  }
+
+  set hasCurrentTypeEntry(hasTypeEntry: boolean) {
+    this._hasTypeEntry = hasTypeEntry;
+  }
+
 
   get currentMax(): string {
     return this._maxPrice;
@@ -38,6 +67,15 @@ export class Filter {
     this._maxPrice = currentMax;
   }
 
+  get hasCurrentMax(): boolean {
+    return this._hasMaxPrice;
+  }
+
+  set hasCurrentMax(hasCurrentMax: boolean) {
+    this._hasMaxPrice =hasCurrentMax;
+  }
+
+
   get currentMin(): string {
     return this._minPrice;
   }
@@ -45,4 +83,15 @@ export class Filter {
   set currentMin(currentMin: string) {
     this._minPrice = currentMin;
   }
+
+  get hasCurrentMin(): boolean {
+    return this._hasMinPrice;
+  }
+
+  set hasCurrentMin(hasCurrentMin: boolean) {
+    this._hasMinPrice =hasCurrentMin;
+  }
+
+
+
 }

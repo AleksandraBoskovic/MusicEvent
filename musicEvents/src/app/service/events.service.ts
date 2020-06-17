@@ -7,7 +7,6 @@ import {Filter} from './../../models/filter.model';
 export class EventsService {
 
   private events: Event[];
-  // private posalji: Event[];
 
 
   constructor() {
@@ -23,18 +22,18 @@ export class EventsService {
     return this.events;
   }
 
-  public addEvent(u_naziv: string, u_adresa: string,
-    u_datum: string, u_muzika: string, u_ulaz: string,
-    u_cena: string, u_dogadjaj: string, u_izvodjac: string, u_kapacitet: number): Event[] {
-    this.events.push(new Event(u_naziv, u_adresa,
-      u_datum, u_muzika, u_ulaz,
-      u_cena, u_dogadjaj, u_izvodjac, u_kapacitet));
+  public addEvent(event: string, adress: string,
+    date: string, typeMusic: string, freeEntry: string,
+    price: string, typeEvent: string, performer: string, capacity: number): Event[] {
+    this.events.push(new Event(event, adress,
+      date, typeMusic, freeEntry,
+      price, typeEvent, performer, capacity));
     return this.events;
   }
 
-  public deleteEvent(b_naziv: string, b_adresa: string, b_datum: string): Event[] {
+  public deleteEvent(event: string, adress: string, date: string): Event[] {
     for (let i of this.events) {
-      if (i.event == b_naziv && i.adress == b_adresa && i.date == b_datum) {
+      if (i.event == event && i.adress == adress && i.date == date) {
         console.log("TREBA DA SE BRISE");
         this.events.splice(this.events.indexOf(i), 1);
       }
@@ -42,16 +41,17 @@ export class EventsService {
     return this.events;
   }
 
-  public changeEvent(i_naziv: string, i_datum: string,
-    i_muzika: string, i_cena: string, i_izvodjac: string): Event[] {
+  public changeEvent(event: string, date: string,
+    typeMusic: string,freeEntry: string, price: string, performer: string): Event[] {
 
     for (let i of this.events) {
-      if (i.event == i_naziv) {
+      if (i.event == event) {
         console.log("TREBA DA SE MENJA");
-        i.date = i_datum;
-        i.typeOfMusic = i_muzika;
-        i.price = i_cena;
-        i.performer = i_izvodjac;
+        i.date = date;
+        i.typeOfMusic = typeMusic;
+        i.price = price;
+        i.performer = performer;
+        i.freeEntry = freeEntry;
       }
     }
 
@@ -60,28 +60,13 @@ export class EventsService {
 
   filterEvents(filterEvents : Filter): Event[] {
 
-     return this.events.filter((event) => event.typeOfMusic === filterEvents.currentTypeMusic);
 
-    // this.posalji = this.events;
+    return this.events.filter((event)=>(filterEvents.hasCurrentTypeMusic?event.typeOfMusic == filterEvents.currentTypeMusic : true)
+    || (filterEvents.hasCurrentTypeEvent? filterEvents.currentTypeEvent == event.typeOfEvent: true)
+    || (filterEvents.hasCurrentTypeEntry? filterEvents.currentTypeEntry == event.freeEntry: true)
+    || (filterEvents.hasCurrentMax? parseInt(filterEvents.currentMax,10) <= parseInt(event.price,10): true)
+    || (filterEvents.hasCurrentMin? parseInt(filterEvents.currentMin,10) >= parseInt(event.price,10): true));
 
-    // this.posalji.filter((event) => event.typeOfMusic === type);
-    // for (let i of this.posalji) {
-    //   console.log(i);
-    // }
-    // if (typeEvent !== '') {
-    //   this.posalji.filter((event) => event.typeOfEvent === typeEvent);
-    //   console.log('uslo event');
-    //   for (let i of this.posalji) {
-    //     console.log(i);
-    //   }
-    // }
-    // if (typeEntrance !== '') {
-    //    this.posalji.filter((event) => event.freeEntry === typeEntrance);
-    // }
-
-    // console.log('uslo');
-
-    // return this.posalji;
   }
 
 

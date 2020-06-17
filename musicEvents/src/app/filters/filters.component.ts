@@ -12,11 +12,9 @@ export class FiltersComponent implements OnInit {
   typesEvent = ['koncert', 'humanitarni koncert', 'svirka', 'festival', 'kafana', 'klub'];
   typeEntrance = ['jeste', 'nije'];
 
-
-
   @Output('currentFilter')
   public emitCurrent: EventEmitter<Filter> = new EventEmitter();
-  currentFilter = new Filter('tehno', '', '','0','10000');
+  currentFilter = new Filter('tehno',false, '',false, '',false,'0',false,'10000',false);
 
   @Output('giveAll')
   public emitAll: EventEmitter<string> = new EventEmitter();
@@ -38,25 +36,30 @@ export class FiltersComponent implements OnInit {
   changeTypeTo(currentType: string): void {
     this.currentActive = currentType,
       this.currentFilter.currentTypeMusic = currentType;
+      this.currentFilter.hasCurrentTypeMusic = true;
   }
   changeTypeEventTo(currentTypeEvent: string): void {
     this.currentActiveTypeEvent = currentTypeEvent,
       this.currentFilter.currentTypeEvent = currentTypeEvent;
+      this.currentFilter.hasCurrentTypeEvent = true;
   }
   changeTypeEntrance(currentTypeEntry: string): void {
     this.currentActiveTypeEntry = currentTypeEntry;
     this.currentFilter.currentTypeEntry = currentTypeEntry;
+    this.currentFilter.hasCurrentTypeEntry = true;
     if(currentTypeEntry === "nije"){
     this.cena = true ;}
   }
 
-  filtriraj() {
+  filterEvents() {
 
     if(this.min > this.max) {
       window.alert('Minimalna cena karte ne sme biti veca od maksimalne ');
     }else {
       this.currentFilter.currentMin=this.min;
+      this.currentFilter.hasCurrentMin = true;
       this.currentFilter.currentMax=this.max;
+      this.currentFilter.hasCurrentMax = true;
     this.emitCurrent.emit(this.currentFilter);
     }
   }
@@ -74,12 +77,17 @@ export class FiltersComponent implements OnInit {
     this.currentActive = '';
     this.currentActiveTypeEvent = '';
     this.currentActiveTypeEntry = '';
+    this.currentFilter.hasCurrentMin = false;
+    this.currentFilter.hasCurrentMax = false;
+    this.currentFilter.hasCurrentTypeEntry = false;
+    this.currentFilter.hasCurrentTypeEvent = false;
+    this.currentFilter.hasCurrentTypeMusic = false;
     this.cena = false;
     this.emitAll.emit('giveAll');
 
   }
 
-  promeni(p: string) {
+  change(p: string) {
     let color = '#00565B';
     if (p === this.currentActive || p === this.currentActiveTypeEvent || p === this.currentActiveTypeEntry) {
       color = 'rgb(255, 166, 0)';

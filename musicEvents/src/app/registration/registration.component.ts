@@ -14,26 +14,24 @@ export class RegistrationComponent implements OnInit {
   errorMessageUsername = '';
   errorMessagePassword = '';
   errorMessagePassword2 = '';
-  korisnik: string;
   constructor() { }
 
   ngOnInit() {
   }
-  onSubmit(name: string, surname: string, username: string, password: string,password2: string): void {
-    if (this.chack(name, surname, username, password) && this.equal_password(password,password2)) {
+  onSubmit(name: string, surname: string, username: string, password: string, password2: string): void {
+    if (this.chack(name, surname, username, password) && this.equal_password(password, password2)) {
       this.user.push(new User(name, surname, username, password));
-      this.korisnik = this.user[0].getUsername();
     }
 
   }
-equal_password(password1: string, password2: string): boolean {
+  equal_password(password1: string, password2: string): boolean {
 
-if(password1 === password2){
-  return true;
-}
-this.errorMessagePassword2 = "Lozinke se ne poklapaju"
-return false;
-}
+    if (password1 === password2) {
+      return true;
+    }
+    this.errorMessagePassword2 = "Lozinke se ne poklapaju"
+    return false;
+  }
   chack(name: string, surname: string, username: string, password: string): boolean {
     return this.chack_name(name) && this.chack_surname(surname) && this.chack_username(username) && this.chack_password(password);
   }

@@ -70,3 +70,6 @@ div.admin{
     padding-left: 31px;
     padding-right: 31px;
 }
+.error {
+  color: red;
+}

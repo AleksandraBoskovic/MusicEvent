@@ -17,7 +17,7 @@ export class LogInFormComponent implements OnInit {
   showUser3 = false;
   userExist = false;
 
-  usernamePasswordList = [['Maja', 'majga'], ['Aleksandra', 'alebo'], ['Marica', 'marbo'], ['Milos', 'milmi']];
+  usernamePasswordList = [['Aleksandra', 'alebo']];
 
   constructor(private ticketsService: TisketsService) { }
 

@@ -10,8 +10,6 @@ private username: string;
 private password: string;
 
   constructor() {
-    // this.usersTickets.push(new Event('Beer fest', 'Usce', '20.08.2020', 'rok', 'jeste', '0',
-    // 'koncert', 'Riblja corba', '10000'));
   }
 
 
