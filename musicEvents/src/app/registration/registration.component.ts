@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './../../models/user.model';
-import { equal } from 'assert';
 import { AllUsersService } from '../service/all-users.service';
+import {FormGroup, FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +15,9 @@ export class RegistrationComponent implements OnInit {
   errorMessagePassword = '';
   errorMessagePassword2 = '';
 
-  constructor(private userService : AllUsersService) { }
+
+  constructor(private userService : AllUsersService) {
+   }
 
   ngOnInit() {
   }
