@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Event} from './../../models/event.model';
+import { User } from 'src/models/user.model';
+import { AllUsersService } from './all-users.service';
 @Injectable({
   providedIn: 'root'
 })
 export class TisketsService {
 
 private usersTickets : Event[] = [];
-private username: string;
-private password: string;
+user: User;
 
-  constructor() {
+  constructor(private userService : AllUsersService) {
+
   }
 
 
@@ -25,26 +27,18 @@ getTickets(): Event[]{
 }
 
 getUsername() {
- return this.username;
+ return this.user.username;
 }
 
 getPassword(){
 
-return this.password;
+return this.user.password;
 }
 
-
-setUsername(username: string){
-this.username=username;
-}
-
-setPassword(password: string){
-  this.password=password;
-}
 
 restoreSesion(){
-  this.username=null;
-  this.password=null;
+  this.user = null;
+
   this.usersTickets = [];
 }
 

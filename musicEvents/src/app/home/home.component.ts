@@ -9,13 +9,17 @@ import { Filter } from './../../models/filter.model';
 })
 export class HomeComponent implements OnInit {
 
-  events: Array<Event>;
+  events: Event [];
 
   currentFilter = new Filter('tehno',false, '',false, '',false, '0',false, '10000',false);
 
 
   constructor(private eventService: EventsService) {
-    this.events = this.eventService.getEvents();
+  //  this.eventService.getEvents().subscribe(
+  //    events => this.events = events,
+  //    error => console.log(error)
+  //  );
+   this.events = this.eventService.getEvents();
   }
 
   ngOnInit() {
@@ -28,6 +32,9 @@ export class HomeComponent implements OnInit {
   }
 
   giveAll(give: string) {
+    // this.eventService.getEvents().subscribe(
+    //   events => this.events = events
+    // );
     this.events = this.eventService.getEvents();
   }
 

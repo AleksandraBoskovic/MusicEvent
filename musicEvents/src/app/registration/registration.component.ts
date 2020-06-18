@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './../../models/user.model';
 import { equal } from 'assert';
+import { AllUsersService } from '../service/all-users.service';
 
 @Component({
   selector: 'app-registration',
@@ -8,19 +9,21 @@ import { equal } from 'assert';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  user: Array<User> = [];
   errorMessageName = '';
   errorMessageSurname = '';
   errorMessageUsername = '';
   errorMessagePassword = '';
   errorMessagePassword2 = '';
-  constructor() { }
+
+  constructor(private userService : AllUsersService) { }
 
   ngOnInit() {
   }
   onSubmit(name: string, surname: string, username: string, password: string, password2: string): void {
     if (this.chack(name, surname, username, password) && this.equal_password(password, password2)) {
-      this.user.push(new User(name, surname, username, password));
+      // this.user.push(new User(name, surname, username, password));
+      this.userService.addUser(new User(name, surname, username, password,'user'));
+      window.alert("Uspesno ste registrovani");
     }
 
   }

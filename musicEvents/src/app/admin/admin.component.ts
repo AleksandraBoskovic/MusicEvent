@@ -11,28 +11,22 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AdminComponent implements OnInit {
   events: Array<Event> = [];
-  adresa: string;
-  dogadjaj: string;
-  datum: string;
-  muzika: string;
-  slobodanulaz: string;
-  cena: string;
-  vrstadogadjaja: string;
-  izvodjac: string;
-  kapacitet: number;
 
   public checkoutForm: FormGroup;
   public checkoutFormDelete: FormGroup;
   public checkoutFormChange: FormGroup;
 
   constructor(private eventService: EventsService, private formBuilder: FormBuilder) {
+    // this.eventService.getEvents().subscribe(
+    //   events => this.events = events
+    // );
     this.events = this.eventService.getEvents();
     this.checkoutForm = this.formBuilder.group({
       event: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z ]+')]],
       adress: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z /]+')]],
       date: ['', [Validators.required, Validators.pattern('[0-9\/]+')]],
       typeMusic: ['', [Validators.required, Validators.pattern('pop|rok|tehno|domaca|dance')]],
-      freeEntry: ['', [Validators.required, Validators.pattern('jeste|nije')]],
+      freeEntrance: ['', [Validators.required, Validators.pattern('jeste|nije')]],
       price: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       typeEvent: ['', [Validators.required, Validators.pattern('koncert|humanitarni koncert|svirka|festival|kafana|klub')]],
       performer: ['', [Validators.required, Validators.pattern('[a-zA-Z ]+')]],
@@ -49,7 +43,7 @@ export class AdminComponent implements OnInit {
       event: ['', [Validators.required, Validators.pattern('[0-9a-zA-Z ]+')]],
       date: ['', [Validators.required, Validators.pattern('[0-9\/]+')]],
       typeMusic: ['', [Validators.required, Validators.pattern('pop|rok|tehno|domaca|dance')]],
-      freeEntry: ['', [Validators.required, Validators.pattern('jeste|nije')]],
+      freeEntrance: ['', [Validators.required, Validators.pattern('jeste|nije')]],
       price: ['', [Validators.required, Validators.pattern('[0-9]+')]],
       performer: ['', [Validators.required, Validators.pattern('[a-zA-Z ]+')]],
     });
@@ -100,15 +94,15 @@ export class AdminComponent implements OnInit {
     return this.checkoutFormChange.get('typeMusic');
   }
 
-  public get freeEntry() {
-    return this.checkoutForm.get('freeEntry');
+  public get freeEntrance() {
+    return this.checkoutForm.get('freeEntrance');
   }
   public get price() {
     return this.checkoutForm.get('price');
   }
 
-  public get freeEntryChange() {
-    return this.checkoutFormChange.get('freeEntry');
+  public get freeEntranceChange() {
+    return this.checkoutFormChange.get('freeEntrance');
   }
   public get priceChange() {
     return this.checkoutFormChange.get('price');
@@ -131,7 +125,7 @@ export class AdminComponent implements OnInit {
 
   onAddEvent(data) {
     this.events = this.eventService.addEvent(this.event.value, this.adress.value,
-      this.date.value, this.typeMusic.value, this.freeEntry.value,
+      this.date.value, this.typeMusic.value, this.freeEntrance.value,
       this.price.value, this.typeEvent.value, this.performer.value, this.capacity.value);
   }
   ngOnInit() {
@@ -140,15 +134,15 @@ export class AdminComponent implements OnInit {
 
 
   onDeleteEvent(data) {
-    this.events = this.eventService.deleteEvent(this.eventDelete.value,this.adressDelete.value,
+    this.events = this.eventService.deleteEvent(this.eventDelete.value, this.adressDelete.value,
       this.dateDelete.value);
   }
 
   onChangeEvent(data) {
 
     this.events = this.eventService.changeEvent(this.eventChange.value,
-      this.dateChange.value,this.typeMusicChange.value,
-      this.freeEntryChange.value,this.priceChange.value,this.performerChange.value);
+      this.dateChange.value, this.typeMusicChange.value,
+      this.freeEntranceChange.value, this.priceChange.value, this.performerChange.value);
 
 
   }

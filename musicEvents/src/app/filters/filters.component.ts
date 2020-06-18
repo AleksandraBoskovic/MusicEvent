@@ -26,7 +26,7 @@ export class FiltersComponent implements OnInit {
 
   currentActive: string;
   currentActiveTypeEvent: string;
-  currentActiveTypeEntry: string;
+  currentActiveTypeEntrance: string;
 
   constructor() { }
 
@@ -43,11 +43,11 @@ export class FiltersComponent implements OnInit {
       this.currentFilter.currentTypeEvent = currentTypeEvent;
       this.currentFilter.hasCurrentTypeEvent = true;
   }
-  changeTypeEntrance(currentTypeEntry: string): void {
-    this.currentActiveTypeEntry = currentTypeEntry;
-    this.currentFilter.currentTypeEntry = currentTypeEntry;
-    this.currentFilter.hasCurrentTypeEntry = true;
-    if(currentTypeEntry === "nije"){
+  changeTypeEntrance(currentTypeEntrance: string): void {
+    this.currentActiveTypeEntrance = currentTypeEntrance;
+    this.currentFilter.currentTypeEntrance = currentTypeEntrance;
+    this.currentFilter.hasCurrentTypeEntrance = true;
+    if(currentTypeEntrance === "nije"){
     this.cena = true ;}
   }
 
@@ -76,10 +76,10 @@ export class FiltersComponent implements OnInit {
     this.currentFilter.currentTypeMusic = 'tehno';
     this.currentActive = '';
     this.currentActiveTypeEvent = '';
-    this.currentActiveTypeEntry = '';
+    this.currentActiveTypeEntrance = '';
     this.currentFilter.hasCurrentMin = false;
     this.currentFilter.hasCurrentMax = false;
-    this.currentFilter.hasCurrentTypeEntry = false;
+    this.currentFilter.hasCurrentTypeEntrance = false;
     this.currentFilter.hasCurrentTypeEvent = false;
     this.currentFilter.hasCurrentTypeMusic = false;
     this.cena = false;
@@ -89,7 +89,7 @@ export class FiltersComponent implements OnInit {
 
   change(p: string) {
     let color = '#00565B';
-    if (p === this.currentActive || p === this.currentActiveTypeEvent || p === this.currentActiveTypeEntry) {
+    if (p === this.currentActive || p === this.currentActiveTypeEvent || p === this.currentActiveTypeEntrance) {
       color = 'rgb(255, 166, 0)';
     }
     return {

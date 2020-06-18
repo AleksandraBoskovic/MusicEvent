@@ -1,7 +1,7 @@
 export class Filter {
   constructor(private _currentTypeMusic: string,private _hasCurrentTypeMusic: boolean,
     private _currentTypeEvent: string, private _hasTypeEvent: boolean,
-    private _currentTypeEntry: string, private _hasTypeEntry: boolean,
+    private _currentTypeEntrance: string, private _hasTypeEntrance: boolean,
     private _minPrice: string, private _hasMinPrice : boolean,
      private _maxPrice: string, private _hasMaxPrice: boolean) {
   }
@@ -42,20 +42,20 @@ export class Filter {
   }
 
 
-  get currentTypeEntry(): string {
-    return this._currentTypeEntry;
+  get currentTypeEntrance(): string {
+    return this._currentTypeEntrance;
   }
 
-  set currentTypeEntry(currentTypeEntry: string) {
-    this._currentTypeEntry = currentTypeEntry;
+  set currentTypeEntrance(currentTypeEntrance: string) {
+    this._currentTypeEntrance = currentTypeEntrance;
   }
 
-  get hasCurrentTypeEntry(): boolean {
-    return this._hasTypeEntry;
+  get hasCurrentTypeEntrance(): boolean {
+    return this._hasTypeEntrance;
   }
 
-  set hasCurrentTypeEntry(hasTypeEntry: boolean) {
-    this._hasTypeEntry = hasTypeEntry;
+  set hasCurrentTypeEntrance(hasTypeEntrance: boolean) {
+    this._hasTypeEntrance = hasTypeEntrance;
   }
 
 

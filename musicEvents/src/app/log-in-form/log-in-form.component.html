@@ -8,9 +8,9 @@
 
 
     <ng-template #dugmeJeIskljuceno>
- <div *ngIf="successLog">
-    <label *ngIf="showUser2" class = "showLabel">Oba polja su obavezna!</label>
-    <label *ngIf="showUser3" class = "showLabel">Pogresan username ili password!</label>
+ <div>
+    <!-- <label *ngIf="showUser2" class = "showLabel">Oba polja su obavezna!</label>
+    <label *ngIf="showUser3" class = "showLabel">Pogresan username ili password!</label> -->
     <br>
       <label>username:</label>
       <br>
@@ -28,12 +28,11 @@
                      #pass>
         <br>
         <br>
-        <button
-        (click)="onLogIn(user.value, pass.value)">LOG IN</button>
+       <a [routerLink]="['/home']" *ngIf="prosao">Idi na pocetnu</a><button
+        (click)="onLogIn(user.value, pass.value)" *ngIf="!prosao">LOG IN</button>
  </div>
     </ng-template>
-    <p *ngIf="showUser"> {{username}} </p>
-    <p *ngIf="showUser"> {{password}} </p>
+
 
 
    </div>

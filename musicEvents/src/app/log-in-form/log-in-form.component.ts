@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TisketsService } from './../service/tiskets.service';
+import { AllUsersService } from '../service/all-users.service';
+import { User } from 'src/models/user.model';
+import { ɵBROWSER_SANITIZATION_PROVIDERS } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-log-in-form',
@@ -8,18 +11,12 @@ import { TisketsService } from './../service/tiskets.service';
 })
 export class LogInFormComponent implements OnInit {
 
-  username: string;
-  password: string;
   showButton = true;
-  successLog = true;
-  showUser = false;
-  showUser2 = false;
-  showUser3 = false;
-  userExist = false;
+  user: User;
+  prosao=false;
 
-  usernamePasswordList = [['Aleksandra', 'alebo']];
 
-  constructor(private ticketsService: TisketsService) { }
+  constructor(private ticketsService: TisketsService,private userService :AllUsersService) { }
 
   ngOnInit() {
   }
@@ -27,40 +24,19 @@ export class LogInFormComponent implements OnInit {
   onPrijaviSe() {
     this.showButton = !this.showButton;
   }
+
   onLogIn(user: string, pass: string) {
-
-    this.username = user;
-    this.password = pass;
-    this.showUser = false;
-    this.showUser2 = false;
-    this.showUser3 = false;
-    this.usernamePasswordList.push(['Ana', 'anara']);
-    for (let i of this.usernamePasswordList) {
-      if (i[0] === this.username && i[1] === this.password) {
-        this.userExist = true;
-      }
-    }
-
-    if (this.userExist) {
-      this.showUser = false;
-      this.successLog = false;
-    }
-
-    if (this.userExist === false) {
-
-      this.showUser = false;
-      this.showUser2 = false;
-      this.showUser3 = true;
-    }
-    if (this.username == "" || this.password == "") {
-      this.showUser2 = true;
-      this.showUser3 = false;
-    }
-
-    this.userExist = false;
-
-    this.ticketsService.setPassword(this.password);
-    this.ticketsService.setUsername(this.username);
-  }
-
+   if(this.userService.existUser(user,pass)){
+    this.user = this.userService.findUser(user,pass)[0];
+    if(this.user.admin()){
+    this.userService.showAdminPage = true;
+    this.userService.isAdmin(true);}
+    this.userService.showUserPage = true;
+    this.prosao=true;
+    this.ticketsService.user=this.user;
+    this.userService.isAdmin(false);
+   }else{
+     window.alert("Uneseni korisnik ne postoji u bazi molimo vaas da se registrujete ili ponovite unos");
+   }
+}
 }

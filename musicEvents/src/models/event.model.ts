@@ -1,6 +1,6 @@
 export class Event {
   constructor(private _event: string, private _adress: string, private _date: string,
-    private _typeOfMusic: string, private _freeEntry: string, private _price: string,
+    private _typeOfMusic: string, private _freeEntrance: string, private _price: string,
     private _typeOfEvent: string, private _performer: string, private _capacity: number) {
   }
 
@@ -16,8 +16,8 @@ export class Event {
   get typeOfMusic(): string {
     return this._typeOfMusic;
   }
-  get freeEntry(): string {
-    return this._freeEntry;
+  get freeEntrance(): string {
+    return this._freeEntrance;
   }
   get price(): string {
     return this._price;
@@ -44,8 +44,8 @@ export class Event {
   set typeOfMusic(value: string) {
     this._typeOfMusic = value;
   }
-  set freeEntry(value: string) {
-    this._freeEntry = value;
+  set freeEntrance(value: string) {
+    this._freeEntrance = value;
   }
   set price(value: string) {
     this._price = value;

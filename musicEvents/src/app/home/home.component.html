@@ -5,7 +5,7 @@
 <app-filters (currentFilter)="changeType($event)"  (giveAll)="giveAll($event)" ></app-filters>
 
 <br>
-{{currentFilter.currentTypeMusic}},{{currentFilter.currentTypeEvent}},{{currentFilter.currentTypeEntry}}
+{{currentFilter.currentTypeMusic}},{{currentFilter.currentTypeEvent}},{{currentFilter.currentTypeEntrance}}
 ,{{currentFilter.currentMin}} {{currentFilter.currentMax}}
 <br>
 <br>
@@ -13,4 +13,5 @@
 <div class="centar">
 <app-event *ngFor="let d of events" [event]="d"></app-event>
 </div>
+
 </div>
