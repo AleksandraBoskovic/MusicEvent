@@ -17,6 +17,7 @@ import { MatSliderModule} from '@angular/material/slider'
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule} from '@angular/forms';
+import { TypeDirective } from './type.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ReactiveFormsModule} from '@angular/forms';
     HomeComponent,
     EventComponent,
     DetailsComponent,
-    MyticketsComponent
+    MyticketsComponent,
+    TypeDirective
   ],
   imports: [
     BrowserModule,
