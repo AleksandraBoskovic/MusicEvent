@@ -1,0 +1,163 @@
+<div class="admin">
+  <br>
+  <img class="pic" style="width:350px ; height:350px" src="./../../assets/mgiphy4.gif">
+  <img class="pic2" style="width:350px ; height:350px" src="./../../assets/mgiphy.gif">
+  <label class="labela"><strong> SEKCIJA ZA UNOS PODATAKA </strong></label>
+  <br>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onAddEvent(checkoutForm.value)">
+      <label for="event">Naziv dogadjaja</label>
+      <br>
+      <input type="text" name="event" id="event" formControlName="event">
+      <br>
+      <p class="error" *ngIf="event.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="event.errors?.pattern">Moze sadrzati samo slova brojeve i razmak</p>
+      <br>
+      <label for="adress">Adresa odrzavanja</label>
+      <br>
+      <input type="text" name="adress" id="adress" formControlName="adress" >
+      <br>
+      <p class="error" *ngIf="adress.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="adress.errors?.pattern">Moze sadrzati samo slova brojeve i razmak</p>
+      <br>
+      <label for="date">Datum odrzavanja</label>
+      <br>
+      <input type="text" name="date" id="date" formControlName="date" >
+      <br>
+      <p class="error" *ngIf="date.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="date.errors?.pattern">podrzani oblik je dd/mm/gggg ili dd.mm.gggg</p>
+      <br>
+      <label for="typeMusic">Vrsta muzike</label>
+      <br>
+      <input type="text" name="typeMusic" id="typeMusic" formControlName="typeMusic" >
+      <br>
+      <p class="error" *ngIf="typeMusic.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="typeMusic.errors?.pattern">pop/rok/tehno/domaca/dance</p>
+      <br>
+      <label for="freeEntrance">Slobodan ulaz</label>
+      <br>
+
+      <input type="text" name="freeEntrance" id="freeEntrance" formControlName="freeEntrance" >
+      <br>
+      <p class="error" *ngIf="freeEntrance.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="freeEntrance.errors?.pattern">podrzan unos jeste/nije</p>
+      <br>
+      <label for="price">Cena dogadjaja</label>
+      <br>
+      <input type="text" name="price" id="price" formControlName="price" >
+      <br>
+      <p class="error" *ngIf="price.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="price.errors?.pattern">broj veci i jednak 0</p>
+      <br>
+      <label for="typeEvent">Vrsta dogadjaja</label>
+      <br>
+      <input type="text" name="typeEvent" id="typeEvent" formControlName="typeEvent" >
+      <br>
+      <p class="error" *ngIf="typeEvent.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="typeEvent.errors?.pattern">koncert/humanitarni koncert/svirka/festival/kafana/klub</p>
+      <br>
+      <label for="performer">Izvodjac</label>
+      <br>
+      <input type="text" name="performer" id="performer" formControlName="performer" >
+      <br>
+      <p class="error" *ngIf="performer.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="performer.errors?.pattern">Moze sadrzati mala/velika slova i razmake</p>
+      <br>
+      <label for="capacity">Kapacitet</label>
+      <br>
+      <input type="text" name="capacity" id="capacity" formControlName="capacity" >
+      <br>
+      <p class="error" *ngIf="capacity.errors?.required"> Obavezno polje</p>
+      <p class = "error" *ngIf="capacity.errors?.pattern">Broj veci od 0</p>
+      <br>
+      <br>
+      <button type="submit" class="btn" [disabled]="!checkoutForm.valid"><strong>UPISI PODATKE</strong></button>
+      <br>
+      <br>
+  </form>
+
+  <br>
+  <label class="labela"><strong> SEKCIJA ZA BRISANJE PODATAKA </strong></label>
+  <br>
+  <br>
+  <form [formGroup]="checkoutFormDelete" (ngSubmit)="onDeleteEvent(checkoutFormDelete.value)">
+    <label for="event">Naziv dogadjaja</label>
+    <br>
+    <input type="text" name="event" id="event" formControlName="event">
+    <br>
+    <p class="error" *ngIf="event.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="event.errors?.pattern">Moze sadrzati samo slova brojeve i razmak</p>
+    <br>
+    <label for="adress">Adresa odrzavanja</label>
+    <br>
+    <input type="text" name="adress" id="adress" formControlName="adress" >
+    <br>
+    <p class="error" *ngIf="adress.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="adress.errors?.pattern">Moze sadrzati samo slova brojeve i razmak</p>
+    <br>
+    <label for="date">Datum odrzavanja</label>
+    <br>
+    <input type="text" name="date" id="date" formControlName="date" >
+    <br>
+    <p class="error" *ngIf="date.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="date.errors?.pattern">podrzani oblik je dd/mm/gggg ili dd.mm.gggg</p>
+    <br>
+    <button type="submit" class="btn" [disabled]="!checkoutFormDelete.valid"><strong>OBRISI PODATKE</strong></button>
+    <br>
+    <br>
+</form>
+  <br>
+  <label class="labela"><strong> SEKCIJA ZA IZMENU PODATAKA </strong></label>
+  <br>
+  <br>
+  <form [formGroup]="checkoutFormChange" (ngSubmit)="onChangeEvent(checkoutFormChange.value)">
+    <label for="event">Naziv dogadjaja</label>
+    <br>
+    <input type="text" name="event" id="event" formControlName="event">
+    <br>
+    <p class="error" *ngIf="event.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="event.errors?.pattern">Moze sadrzati samo slova brojeve i razmak</p>
+    <br>
+    <label for="date">Datum odrzavanja</label>
+    <br>
+    <input type="text" name="date" id="date" formControlName="date" >
+    <br>
+    <p class="error" *ngIf="date.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="date.errors?.pattern">podrzani oblik je dd/mm/gggg ili dd.mm.gggg</p>
+    <br>
+    <label for="typeMusic">Vrsta muzike</label>
+    <br>
+    <input type="text" name="typeMusic" id="typeMusic" formControlName="typeMusic" >
+    <br>
+    <p class="error" *ngIf="typeMusic.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="typeMusic.errors?.pattern">pop/rok/tehno/domaca/dance</p>
+    <br>
+    <label for="freeEntrance">Slobodan ulaz</label>
+    <br>
+    <input type="text" name="freeEntrance" id="freeEntrance" formControlName="freeEntrance" >
+    <br>
+    <p class="error" *ngIf="freeEntrance.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="freeEntrance.errors?.pattern">podrzan unos jeste/nije</p>
+    <br>
+    <label for="price">Cena dogadjaja</label>
+    <br>
+    <input type="text" name="price" id="price" formControlName="price" >
+    <br>
+    <p class="error" *ngIf="price.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="price.errors?.pattern">broj veci i jednak 0</p>
+    <br>
+    <label for="performer">Izvodjac</label>
+    <br>
+    <input type="text" name="performer" id="performer" formControlName="performer" >
+    <br>
+    <p class="error" *ngIf="performer.errors?.required"> Obavezno polje</p>
+    <p class = "error" *ngIf="performer.errors?.pattern">Moze sadrzati mala/velika slova i razmake</p>
+    <br>
+    <button type="submit" class="btn" [disabled]="!checkoutFormChange.valid"><strong>IZMENI PODATKE</strong></button>
+    <br>
+    <br>
+</form>
+
+<br>
+
+  </div>
+

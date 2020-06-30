@@ -1,0 +1,60 @@
+<div class="centar">
+
+
+<div>
+
+    <br>
+    <span class="error">* </span><label><b>Ime:</b></label>
+    <br>
+    <input type="text" #name>
+    <br>
+    <span class="error">{{errorMessageName}}</span>
+    <br>
+
+
+    <br>
+    <span class="error">* </span><label><b>Prezime:</b></label>
+    <br>
+    <input type="text" #surname>
+    <br>
+    <span class="error">{{errorMessageSurname}}</span>
+    <br>
+
+    <br>
+    <span class="error">* </span> <label><b>Korisnicko ime:</b></label>
+    <br>
+    <input type="text" #username>
+    <br>
+    <span class="error">{{errorMessageUsername}}</span>
+    <br>
+
+    <br>
+    <span class="error">* </span> <label><b>Lozinka:</b></label>
+    <br>
+    <input type="text" #password>
+    <br>
+    <span class="error">{{errorMessagePassword}}</span>
+    <br>
+
+    <br>
+    <span class="error">* </span> <label><b>Ponovo unesi lozinku:</b></label>
+    <br>
+    <input type="text" #passwordAgain>
+    <br>
+    <span class="error">{{errorMessagePassword2}}</span>
+    <br>
+    <br>
+
+
+    <button style="width: 20%" (click)="onSubmit(name.value,surname.value,username.value,password.value,passwordAgain.value)"> Sacuvaj</button>
+  </div>
+
+  <img style="width:60% ; height:400px" src="./../../assets/giphy (3).gif">
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,15 @@
+<div class="centar">
+  <app-giphy-gallery [selected]='currentFilter.currentTypeMusic'>
+  </app-giphy-gallery>
+<br>
+<app-filters (currentFilter)="changeType($event)"  (giveAll)="giveAll($event)" ></app-filters>
+
+<br>
+<br>
+<br>
+<br>
+<div class="centar">
+<app-event *ngFor="let d of events" [event]="d"></app-event>
+</div>
+
+</div>

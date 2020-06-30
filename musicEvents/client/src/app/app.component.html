@@ -1,0 +1,17 @@
+
+ <app-log-in (logged) ="onLogIn($event)" *ngIf="logged"></app-log-in>
+<app-registration (registration)= "onRegistration($event)" *ngIf="registration"></app-registration>
+
+ <nav *ngIf="ok">
+  <a routerLink="/home" routerLinkActive="active"   >Pocetna</a>
+  <a routerLink="/admin" routerLinkActive="active"   >Admin strana</a>
+  <a routerLink="/myTickets" routerLinkActive="active"   >Moje karte</a>
+</nav>
+
+
+
+<a *ngIf="ok" [routerLink]="['/logIn']">
+<button  *ngIf="ok"  style="position:fixed;bottom: 50%;width:9.5%;left: 0px;" (click)="logOut()">Log out</button>
+</a>
+<router-outlet *ngIf="ok" #routerOutlet="outlet"></router-outlet>
+

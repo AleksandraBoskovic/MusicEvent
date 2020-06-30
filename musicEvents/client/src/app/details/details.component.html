@@ -1,0 +1,37 @@
+
+<div class="details">
+
+  <a [routerLink]="['/home']"> <img class="pic" style="width:50px ;
+  height:50px" src="./../../assets/strelica.png"></a>
+<br>
+<p><strong>Dobrodoslicu Vam zeli {{event.event}}!</strong></p>
+<p>
+<br>
+<br>Dana {{event.date}} na adresi {{event.adress}} imacete cast da uzivate u
+{{event.typeOfMusic}} muzici.
+<br>Na {{event.typeOfEvent}} cete uzivati u numerama {{event.performer}}.
+<br> Za ovu manifestaciju ulaz {{event.freeEntry}} slobodan.
+<br><p *ngIf="capacity; else full"> U prodaji je preostalo jos {{event.capacity}} karata.</p>
+  <ng-template #full>
+    <p> Nema vise karata u prodaji! </p>
+    </ng-template>
+
+<br> Cena karte je: {{event.price}}
+<div *ngIf="capacity" style="background-color:rgb(255, 212, 128) ;color:black">
+<br>
+<label #broj_karata  >Postovani, unesite kolicinu karata:</label>
+<br>
+<br>
+<input type = "text" #number>
+<br><br>
+{{number.value}}
+{{event.capacity}}
+<button class = "btn"  (click)="dodajKartu(number.value)" >REZERVISI</button>
+<br>
+</div>
+<br>
+<p><strong>HVALA NA UKAZANOM POVERENJU!</strong></p>
+
+</div>
+
+
