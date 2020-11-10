@@ -1,0 +1,67 @@
+<div *ngIf='loggedIn === true' class="container">
+  <br>
+  <div>
+    <h3 style='text-align:center'>
+      {{user.name}} profilna strana
+    </h3>
+  </div>
+  <br>
+  <br>
+
+  <table style="width:100%; font-size:22px ; font-size: 25px ">
+    <tr>
+      <td>Ime : {{user.name}}</td>
+      <td><button for='name' class="btn btn-dark" (click)="change('name')">promeni</button> </td>
+    </tr>
+    <tr>
+      <td>Prezime : {{user.surname}}</td>
+      <td><button for='name' class="btn btn-dark" (click)="change('surname')">promeni</button> </td>
+    </tr>
+    <tr>
+      <td>Korisnicko ime : {{user.username}}</td>
+      <td><button for='name' class="btn btn-dark" (click)="change('username')">promeni</button> </td>
+    </tr>
+    <tr>
+      <td>Email : {{user.email}}</td>
+      <td><button for='name' class="btn btn-dark" (click)="change('email')">promeni</button> </td>
+    </tr>
+    <tr>
+      <td>Telefon : {{user.phone}}</td>
+      <td><button for='name' class="btn btn-dark" (click)="change('phone')">promeni</button> </td>
+    </tr>
+  </table>
+  <hr>
+  <h3 style="color:brown">{{user.name}} ovo je istorija vasih narucivanja karata:</h3>
+  <br>
+  <div *ngFor="let ticket of tickets">
+    <article class="card fl-center">
+      <section class="date">
+        <time>
+          <span>{{ticket.datum}}</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        <small></small>
+        <h3>{{ticket.naziv}}</h3>
+        <div>
+          <br>
+          <p>Mesto odrzavanja:</p>
+          <b> <i style="font-size: 15px">{{ticket.adresa}}</i></b>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p>
+            Cena pojedinacne karte iznosi:
+            <b>{{ticket.cena}}</b> din
+          </p>
+          <span style="color:rgb(216, 155, 12);font-size: 20px ;width: 100px;">karata: {{ticket.odabrano}}</span>
+        </div>
+
+      </section>
+    </article>
+    <div style="background-color: black; height: 10px"></div>
+    <hr>
+
+  </div>
+
+</div>

@@ -1,41 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { Event } from './../../models/event.model';
-import { EventsService } from '../service/events.service';
-import { Filter } from './../../models/filters.model';
+import { HttpClient } from '@angular/common/http';
+import { EventService } from '../services/event.service';
+import { Event } from './../../models/event';
+import { Filter } from 'src/models/filters';
+import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  events: Event[];
+  model: NgbDateStruct;
+  constructor(private http: HttpClient, private eventService: EventService) {
 
-  events: Array<Event>;
-
-
-
-  currentFilter = new Filter('tehno',false, '',false, '',false, '0',false, '10000',false);
-
-  constructor(private eventService: EventsService) {
-    this.events = this.eventService.getEvents();
-  }
-
-  ngOnInit() {
+    this.eventService.getEvents().subscribe(data => this.events = data);
 
   }
 
-  changeType(currentFilter: Filter) {
+  ngOnInit(): void {
+  }
 
-    this.currentFilter = currentFilter;
-    this.events = this.eventService.filterEvents(this.currentFilter);
+  filter(typeOfMusic: string, typeOfEvent: string){
+
+    let date = this.model.day+"."+this.model.month+"."+this.model.year;
+    console.log(typeOfEvent,typeOfMusic,date);
+    this.events = this.eventService.filterEvents(new Filter(typeOfMusic,true,typeOfEvent,true,date,true));
 
   }
 
-  giveAll(give: string){
-
-this.events = this.eventService.getEvents();
+  showAll(){
+    this.eventService.getEvents().subscribe(data => this.events=data);
   }
-
-
-
-
 }

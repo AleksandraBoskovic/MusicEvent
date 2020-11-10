@@ -1,0 +1,20 @@
+<br>
+<h3 style="text-align:center">Log In</h3>
+<div class="container">
+    <form [formGroup]='checkoutForm' (ngSubmit)='onSubmit(checkoutForm.value)'>
+        <div>
+            <label>Korisnicko ime (6-12 karaktera):</label>
+            <input type="text" class="form-control" formControlName='username'>
+            <p *ngIf='checkoutForm.get("username").errors?.required' style="color: red;">Obavezno polje</p>
+            <p *ngIf='checkoutForm.get("username").errors?.pattern' style="color: red;">Proverite unos</p>
+        </div>
+        <div>
+            <label>Sifra (6-12 karaktera):</label>
+            <input type="password" class="form-control" formControlName='password'>
+            <p *ngIf='checkoutForm.get("password").errors?.required' style="color: red;">Obavezno polje</p>
+            <p *ngIf='checkoutForm.get("password").errors?.pattern' style="color: red;">Proverite unos</p>
+        </div>
+            <button type="submit" class="btn btn-success btn-block" [disabled]='!checkoutForm.valid'>Log In</button>
+        </form>
+
+</div>

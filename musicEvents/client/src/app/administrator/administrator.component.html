@@ -1,0 +1,176 @@
+<h2 style="text-align:center">Administrator page</h2>
+<div class="container">
+  <button class="btn btn-dark btn-block" (click)="onButtonNewAdministrator()">Kreiraj novog administratora</button>
+  <br>
+  <div *ngIf='btnNewAdministratorClicked === true'>
+    <!-- <h3 style="text-align:center">Form</h3> -->
+    <div class="container">
+      <form [formGroup]='checkoutForm' (ngSubmit)='onSubmit(checkoutForm.value)'>
+        <div>
+          <label>Ime (prvo slovo veliko):</label>
+          <input type="text" class="form-control" formControlName='name'>
+          <p *ngIf='checkoutForm.get("name").errors?.required' style="color: red;">Ime je obavezno</p>
+          <p *ngIf='checkoutForm.get("name").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Prezime (prvo slovo veliko):</label>
+          <input type="text" class="form-control" formControlName='surname'>
+          <p *ngIf='checkoutForm.get("surname").errors?.required' style="color: red;">Prezime je obavezno</p>
+          <p *ngIf='checkoutForm.get("surname").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Korisnicko ime (6-12 karaktera):</label>
+          <input type="text" class="form-control" formControlName='username'>
+          <p *ngIf='checkoutForm.get("username").errors?.required' style="color: red;">Korisnicko ime je obavezno</p>
+          <p *ngIf='checkoutForm.get("username").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Lozinka (6-12 karaktera):</label>
+          <input type="password" class="form-control" formControlName='password'>
+          <p *ngIf='checkoutForm.get("password").errors?.required' style="color: red;">Lozinka je obavezna</p>
+          <p *ngIf='checkoutForm.get("password").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Potvrdi lozinku:</label>
+          <input type="password" class="form-control" formControlName='password1'>
+          <p *ngIf='checkoutForm.get("password1").errors?.required' style="color: red;">Lozinka je obavezna</p>
+          <p *ngIf='checkoutForm.get("password1").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" class="form-control" formControlName='email'>
+          <p *ngIf='checkoutForm.get("email").errors?.required' style="color: red;">Email je obavezan</p>
+          <p *ngIf='checkoutForm.get("email").errors?.email' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <div>
+          <label>Telefon (npr: 069-456-7021):</label>
+          <input type="tel" class="form-control" formControlName='phone'>
+          <p *ngIf='checkoutForm.get("phone").errors?.required' style="color: red;">Telefon je obavezan</p>
+          <p *ngIf='checkoutForm.get("phone").errors?.pattern' style="color: red;">Polje je netacno popunjeno</p>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" [disabled]='!checkoutForm.valid'><strong>Registruj se</strong></button>
+      </form>
+    </div>
+    <br>
+  </div>
+  <button class="btn btn-dark btn-block" (click)=onBtnNewEvent()>Kreiraj novi muzicki dogadjaj</button>
+  <br>
+  <div *ngIf='btnNewEvent === true'>
+    <div class="container">
+
+      <form [formGroup]="eventForm" (ngSubmit)="submitForm(eventForm.value)">
+
+        <div>
+          <label>Ime dogadjaja:</label>
+          <input type="text" class="form-control" formControlName="nazivDog">
+          <p class="error" *ngIf="nazivDog().errors?.required"> Ime je obavezno</p>
+          <p class="error" *ngIf="nazivDog().errors?.pattern">Moze da sadrzi slova,brojeve,razmake</p>
+        </div>
+
+        <div>
+          <label>Slobodan ulaz</label>
+          <input type="text" class="form-control" formControlName="slobodanUlaz" >
+          <p class="error" *ngIf="slobodanUlaz().errors?.required">Obavezno polje</p>
+          <p class="error" *ngIf="slobodanUlaz().errors?.pattern">da/ne</p>
+        </div>
+
+
+        <div>
+          <label>Cena:</label>
+          <input type="number" class="form-control" formControlName="cena" >
+          <p class="error" *ngIf="cena().errors?.required">Cena je obavezna</p>
+          <p class="error" *ngIf="cena().errors?.number">Moze da sadrzi samo brojeve</p>
+        </div>
+
+
+        <div>
+          <label>Kapacitet:</label>
+          <input type="number" class="form-control" formControlName="kapacitet">
+          <p class="error" *ngIf="kapacitet().errors?.required">Kapacitet je obavezan</p>
+          <p class="error" *ngIf="kapacitet().errors?.number">Moze da sadrzi samo brojeve</p>
+        </div>
+
+
+        <div>
+          <label>Datum:</label>
+          <input type="date" class="form-control" formControlName="datum">
+          <p class="error" *ngIf="datum().errors?.required"> Datum je obavezan</p>
+          <p class="error" *ngIf="datum().errors?.date">Moze da sadrzi samo brojeve</p>
+        </div>
+
+
+
+        <div>
+          <label>Tip muzike</label>
+          <input type="text" class="form-control" formControlName="vrstaMuzike">
+          <p class="error" *ngIf="vrstaMuzike().errors?.required"> Obavezno polje</p>
+          <p class="error" *ngIf="vrstaMuzike().errors?.pattern">dzez/rok/tehno/etno/rejv/klasicna</p>
+        </div>
+
+        <div>
+          <label>Tip dogadjaja:</label>
+          <input type="text" class="form-control" formControlName="vrstaDogadjaja">
+          <p class="error" *ngIf="vrstaDogadjaja().errors?.required"> Obavezno polje</p>
+          <p class="error" *ngIf="vrstaDogadjaja().errors?.pattern">koncert/svirka/festival</p>
+        </div>
+
+
+
+
+        <div>
+          <label>Adresa:</label>
+          <input type="text" class="form-control" formControlName="adresa">
+          <p class="error" *ngIf="adresa().errors?.required"> Obavezno polje</p>
+          <p class="error" *ngIf="adresa().errors?.pattern">Moze da sadrzi samo slova,brojeve, razmake</p>
+        </div>
+
+        <div>
+          <label>Slika:</label>
+          <input type="text" class="form-control" formControlName="slika">
+          <p class="error" *ngIf="slika().errors?.pattern">ime.(jpg|png|jpeg)</p>
+        </div>
+
+
+        <div>
+          <label>Detalji:</label>
+          <textarea class="form-control" formControlName="detalji" rows="5"></textarea>
+          <p class="error" *ngIf="detalji().errors?.pattern">Moze da sadrzi samo slova,brojeve, razmake</p>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" [disabled]='!eventForm.valid'><strong>Kreiraj dogadjaj</strong></button>
+
+
+        <br>
+        <br>
+      </form>
+    </div>
+  </div>
+
+
+  <div>
+    <h3>
+      Aktivni dogadjaji:
+    </h3>
+
+    <div class="card flex-row flex-wrap content" *ngFor="let event of events; index as i">
+      <div class="card-header border-0">
+        <img style="width: 500px;height:300px" src="./../../assets/{{event.slika}}" alt="">
+      </div>
+      <div class="card text-center" style="width: 550px;height:300px;">
+        <div class="card-header">
+          Datum: {{event.datum }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"> {{event.nazivDog}} </h5>
+          <p class="card-text" style="height: 3rem; overflow: hidden;"> {{event.detalji}} </p>
+          <a [routerLink]="['/events/',event._id]" class="btn btn-primary">Detalji</a>
+        </div>
+        <div class="card-footer text-muted">
+          Tip muzike: {{event.vrstaMuzike }}
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>

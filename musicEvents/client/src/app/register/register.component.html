@@ -1,0 +1,50 @@
+<br>
+<h3 style="text-align:center">Registracija</h3>
+<div class="container">
+  <form [formGroup]='checkoutForm' (ngSubmit)='onSubmit(checkoutForm.value)'>
+    <div>
+      <label>Ime (prvo veliko slovo):</label>
+      <input type="text" class="form-control" formControlName='name'>
+      <p *ngIf='checkoutForm.get("name").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("name").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Prezime (prvo veliko slovo):</label>
+      <input type="text" class="form-control" formControlName='surname'>
+      <p *ngIf='checkoutForm.get("surname").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("surname").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Korisnicko ime (6-12 karaktera):</label>
+      <input type="text" class="form-control" formControlName='username'>
+      <p *ngIf='checkoutForm.get("username").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("username").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Sifra (6-12 karaktera):</label>
+      <input type="password" class="form-control" formControlName='password'>
+      <p *ngIf='checkoutForm.get("password").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("password").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Potvrdi sifru:</label>
+      <input type="password" class="form-control" formControlName='password1'>
+      <p *ngIf='checkoutForm.get("password1").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("password1").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="email" class="form-control" formControlName='email'>
+      <p *ngIf='checkoutForm.get("email").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("email").errors?.email' style="color: red;">Proveri unos</p>
+    </div>
+    <div>
+      <label>Telefon (npr:069-456-7021):</label>
+      <input type="tel" class="form-control" formControlName='phone'>
+      <p *ngIf='checkoutForm.get("phone").errors?.required' style="color: red;">Obavezno polje</p>
+      <p *ngIf='checkoutForm.get("phone").errors?.pattern' style="color: red;">Proveri unos</p>
+    </div>
+    <button type="submit" class="btn btn-success btn-block" [disabled]='!checkoutForm.valid'>Registruj se</button>
+  </form>
+
+</div>

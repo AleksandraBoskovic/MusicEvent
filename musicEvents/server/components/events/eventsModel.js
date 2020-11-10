@@ -2,47 +2,49 @@ const mongoose = require('mongoose');
 
 const eventsSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  nazivDog:{
+  nazivDog: {
     type: String,
     require: true,
   },
-  adresa:{
+  adresa: {
     type: String,
     require: true,
   },
-  datum:{
+  slika:{
+    type: String,
+  },
+  datum: {
     type: String,
     require: true,
   },
-  vrstaMuzike:{
+  vrstaMuzike: {
     type: String,
     require: true,
   },
-  slobodanUlaz:{
+  slobodanUlaz: {
     type: String,
     require: true,
   },
-  cena:{
+  cena: {
     type: String,
     require: true,
   },
-  vrstaDogadjaja:{
+  vrstaDogadjaja: {
     type: String,
     require: true,
   },
-  izvodjac:{
-    type: String,
-    require: true,
-  },
-  kapacitet:{
+
+  kapacitet: {
     type: Number,
     require: true,
   },
-
+  detalji: {
+    type: String,
+  }
 },
-{
-  versionKey: false
-}
+  {
+    versionKey: false
+  }
 );
 
-module.exports = mongoose.model('Events',eventsSchema);
+module.exports = mongoose.model('Events', eventsSchema);

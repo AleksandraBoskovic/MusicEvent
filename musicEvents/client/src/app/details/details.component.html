@@ -1,37 +1,93 @@
+<div class="container">
+  <div class="content">
+    <!-- <img style="width: 500px;height:300px" src="./../../assets/ml.jpg" alt=""> -->
+    <div style="text-align: center;width:100%;height:400px">
+    <img style='height: 100%; width: 100%; object-fit: contain' src="./../../assets/{{event.slika}}" alt="">
+    </div>
+    <br>
+    <button *ngIf="isAdmin" class="btn btn-primary btn-danger" style="font-size: 20px;width:100%"
+      (click)="deleteEvent()"> Obrisi</button>
 
-<div class="details">
+    <h1>{{event.nazivDog}}</h1>
+    <div style="text-align: right">
+      <button *ngIf="isAdmin" class="btn btn-primary btn-success" style="font-size: 20px" (click)="change('nazivDog')">
+        Izmeni</button>
+    </div>
+    {{event.detalji}}
+    <div style="text-align: right">
+      <button *ngIf="isAdmin" class="btn btn-primary btn-success" style="font-size: 20px" (click)="change('detalji')">
+        Izmeni</button>
+    </div>
+    <hr>
+    <table style="width:100%; font-size:22px ">
+      <tr>
+        <td>Datum:</td>
+        <td>{{event.datum}} </td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('datum')"> Izmeni</button></td>
+      </tr>
+      <tr>
+        <td>Vrsta muzike:</td>
+        <td>{{event.vrstaMuzike}} </td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('vrstaMuzike')"> Izmeni</button></td>
 
-  <a [routerLink]="['/home']"> <img class="pic" style="width:50px ;
-  height:50px" src="./../../assets/strelica.png"></a>
-<br>
-<p><strong>Dobrodoslicu Vam zeli {{event.event}}!</strong></p>
-<p>
-<br>
-<br>Dana {{event.date}} na adresi {{event.adress}} imacete cast da uzivate u
-{{event.typeOfMusic}} muzici.
-<br>Na {{event.typeOfEvent}} cete uzivati u numerama {{event.performer}}.
-<br> Za ovu manifestaciju ulaz {{event.freeEntry}} slobodan.
-<br><p *ngIf="capacity; else full"> U prodaji je preostalo jos {{event.capacity}} karata.</p>
-  <ng-template #full>
-    <p> Nema vise karata u prodaji! </p>
-    </ng-template>
+      </tr>
+      <tr>
+        <td>Vrsta dogadjaja:</td>
+        <td>{{event.vrstaDogadjaja}} </td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('vrstaDogadjaja')"> Izmeni</button></td>
 
-<br> Cena karte je: {{event.price}}
-<div *ngIf="capacity" style="background-color:rgb(255, 212, 128) ;color:black">
-<br>
-<label #broj_karata  >Postovani, unesite kolicinu karata:</label>
-<br>
-<br>
-<input type = "text" #number>
-<br><br>
-{{number.value}}
-{{event.capacity}}
-<button class = "btn"  (click)="dodajKartu(number.value)" >REZERVISI</button>
-<br>
+      </tr>
+      <tr>
+        <td>Cena: </td>
+        <td>{{event.cena}} </td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('cena')"> Izmeni</button></td>
+
+      </tr>
+      <tr>
+        <td>Adresa:</td>
+        <td>{{event.adresa}}</td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('adresa')"> Izmeni</button></td>
+
+      </tr>
+      <tr>
+        <td>Kapacitet:</td>
+        <td>{{event.kapacitet}} </td>
+        <td *ngIf="isAdmin" style="text-align: right"><button class="btn btn-primary btn-success"
+            style="font-size: 20px" (click)="change('kapacitet')"> Izmeni</button></td>
+
+      </tr>
+    </table>
+    <hr>
+    <div *ngIf="isUser" class="input-group">
+      <h4 style="color: brown">Unesite broj karata:</h4>
+      <br>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-danger btn-number" (click)="minus()">
+          -
+        </button>
+      </span>
+      <span style="width: 40px; text-align: center; ">
+        <h3> {{odabrano}} </h3>
+      </span>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-success btn-number" (click)="add()">
+          +
+        </button>
+      </span>
+    </div>
+    <div *ngIf="isUser">
+      <hr>
+      <button class="btn btn-primary" style="font-size: 20px" (click)="reserve()" [routerLink]="['/tickets/']">
+        Rezervisi</button>
+      <hr>
+    </div>
+
+  </div>
+
+
 </div>
-<br>
-<p><strong>HVALA NA UKAZANOM POVERENJU!</strong></p>
-
-</div>
-
-

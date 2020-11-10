@@ -1,34 +1,107 @@
+  {
+    "detalji":"Posle uspešnih koncerata po celom regionu Marko Louis će održati veliki koncert u Beogradskoj Kombank Dvorani u sklopu treće sezone 'Beskraj Tour by Barcaffe'. Posle tri studijska albuma i jednog Live albuma, Marko je nedavno objavio prvi singl 'Ninana', koji najavljuje njegov četvrti album. Markova verzija pesme 'Rockabye' pod nazivom 'Svet je u nama' u saradnji sa Clean Bandit i Tuborgom, privukla je veliku pažnju u celom regionu. Publika je ovu pesmu nazvala 'motivacionom' i vreme je da je čujemo uživo na koncertima. U Beogradu je sve počelo i ovde igram na domaćem terenu, izjavljuje Marko.",
+    "nazivDog":"Marko Louis",
+    "slika": "ml.jpg",
+    "cena":2000,
+    "kapacitet":500,
+    "datum":"12.11.2020",
+    "vrstaMuzike":"jazz",
+    "vrstaDogadjaja":"concert",
+    "adresa":"Kombank dvorana",
+    "slobodanUlaz":"no"
+  }
+  {
+    "detalji":"Čuveni australijski muzičar Nick Cave, nastupiće sa svojim bendom The Bad Seeds u Beogradu, tačnije u Štark Areni 4. juna 2020. godine. Bend je najavio prolećnu evropsku i britansku turneju za 2020. godinu gde se i Beograd našao među gradovima. Zakazani su koncerti u 19 zemalja, uključujući 6 nastupa u Velikoj Britaniji.Koncert će se održati u organizaciji Charm Musica. Bend je nedavno izdao nahvaljeni 'Ghosteen', poslednji album u trilogiji koju Cave stvara od 2013. godine. Ovo će biti prvi koncert benda u Beogradu još od 2017. godine.",
+    "nazivDog":"Nick Cave",
+    "slika": "nc.jpg",
+    "cena":3000,
+    "kapacitet":200,
+    "datum":"15.05.2021",
+    "vrstaMuzike":"rock",
+    "vrstaDogadjaja":"concert",
+    "adresa":"Stark arena",
+    "slobodanUlaz":"no"
 
-  {
-    "nazivDog" : "BeerFest",
-    "adresa" : "Usce",
-    "datum" : "20.08.2020",
-    "vrstaMuzike" : "rok",
-    "slobodanUlaz" : "jeste",
-    "cena": "0",
-    "vrstaDogadjaja": "koncert",
-    "izvodjac": "Riblja Corba",
-    "kapacitet": 3
   }
   {
-    "nazivDog" : "CecaMusic",
-    "adresa" : "Usce",
-    "datum" : "20.08.2020",
-    "vrstaMuzike" : "pop",
-    "slobodanUlaz" : "nije",
-    "cena": "3000",
-    "vrstaDogadjaja": "koncert",
-    "izvodjac": "Ceca",
-    "kapacitet": 10000
+    "detalji":"Ivana i momci planiraju da nastave sa svojom koncertnom turnejom povodom 20 godina benda. Zbog izuzetno velikog interesovanja da se ponovi svirka i energija iz decembra, otvaramo još jedan koncert u Beogradu i opet u intimijoj atmosferi. Kako su članovi grupe rekli, u takvom prostoru je daleko bolja i bliskija komunikacija sa publikom. Nakon 20 godina već je suvišno pričati o kvalitetima Ivaninog pevanja, njihove svirke i energije. Negativ je jednostavno Negativ, jedan od najboljih bendova koji je ponikao na ovim prostorima.",
+    "nazivDog":"Negative",
+    "slika": "ng.png",
+    "cena":1500,
+    "kapacitet":100,
+    "datum":"03.09.2020",
+    "vrstaMuzike":"rock",
+    "vrstaDogadjaja":"gig",
+    "adresa":"Bitefartcafe",
+    "slobodanUlaz":"yes"
+
+
   }
   {
-    "nazivDog" : "Humanitarni koncert",
-    "adresa" : "Sava centar",
-    "datum" : "15.05.2020",
-    "vrstaMuzike" : "pop",
-    "slobodanUlaz" : "nije",
-    "cena": "2000",
-    "vrstaDogadjaja": "humanitarni koncert",
-    "izvodjac": "Sasa Kovacevic",
-    "kapacitet": 10000
+    "detalji":"Najbolji regionalni festival obradovao je svoje fanove najavom prve polovine line up-a i tako već osvojio srca mnogih klabera u Srbiji i šire. Da nas od 6. do 8. avgusta u Vrnjačkoj Banji očekuje garantovano dobar provod pokazuju već neka od najpoznatijih imena svetske scene kojima će ovo biti prvi nastup posle duže pauze.",
+    "nazivDog":"Lovefest",
+    "slika": "love.png",
+    "cena":2500,
+    "kapacitet":10,
+    "datum":"06.08.2021",
+    "vrstaMuzike":"techno",
+    "vrstaDogadjaja":"festival",
+    "adresa":"City park lake",
+    "slobodanUlaz":"yes"
+
   }
+  {
+    "detalji":"Perpetum Jazzile je jedna od najspektakularnijih i najvećih vokalnih grupa na svetu koja dolazi iz Slovenije. Kritički hvaljeni, popularni zahvaljujući svojim snažnim ritmom, bogatim harmonijama, pozitivnom energijom, zapanjujuća kreativnost i posebna mešavina različitih žanrova muzike, koji reproduciraju samo ljudski glas - folk, pop, jazz, gospel, blues, bossa novi, disk, funk i drugi.",
+    "nazivDog":"Perpetum Jazzile",
+    "slika": "perpetum.jpg",
+    "cena":4000,
+    "kapacitet":1000,
+    "datum":"31.10.2020",
+    "vrstaMuzike":"jazz",
+    "vrstaDogadjaja":"concert",
+    "adresa":"Sava centar",
+    "slobodanUlaz":"no"
+
+  }
+  {
+    "detalji":"Rame uz rame u borbi za kvalitetnu muziku i stvaralaštvo na našim prostorima, Vasil Hadžimanov Band je zasigurno najbolji način da Musicology nastavi da živi i diše, u vreme kada je najbitnije da su muzičari, organizatori i publika jedno. Ovaj izvrsni sklop muzičara, objavio je od osnivanja benda, 1997. godine, sedam studijskih albuma koji su naišli na fantastične kritike širom sveta. Svojim talentom, radom i neprestanim pomeranjem granica, članove benda prepoznali su svetski kritičari kao vrhunske muzičare",
+    "nazivDog":"Vasil Hadzimanov",
+    "slika": "vasil.png",
+    "cena":3500,
+    "kapacitet":2000,
+    "datum":"30.07.2020",
+    "vrstaMuzike":"ethno",
+    "vrstaDogadjaja":"gig",
+    "adresa":"Bitefartcafe",
+    "slobodanUlaz":"no"
+
+  }
+  {
+    "detalji":"Maktub, Satorijev kinematografski rejv stiže u Barutanu. Poznat po svojim imerzivnim lajv nastupima, holandski producent, poreklom iz Srbije, Satori aka Đorđe Petrović deo je novog talasa umetnika koji imaju ritualistički trans u svojim setovima. Inspirisan da ovekoveči deo elektronske muzike svog beskrajnog muzičkog stvaralaštva, Satori je krajem 2017. godine objavio svoj debi album Maktub za Crosstown Rebels, dobivši neverovatnu reakciju koja je Satorijevu karijeru odvela u drugu dimenziju.",
+    "nazivDog":"Maktub",
+    "slika": "mktb.png",
+    "cena":1500,
+    "kapacitet":853,
+    "datum":"29.08.2020",
+    "vrstaMuzike":"rave",
+    "vrstaDogadjaja":"gig",
+    "adresa":"Barutana",
+    "slobodanUlaz":"no"
+
+  }
+  {
+    "detalji":"Ara Malikian je svetski priznat umetnik, najveća zvezda medju violinistima danas. Često ga predstavljaju kao libanskog virtuoza sa jermenskim začinima. Klasično obrazovan muzičar je tokom godina spojio muziku različitih kultura koja uključuje i španski flamenko, argentinski tango, kao i cigansku muziku. Njegova interpretacija vuče korene iz arapske i jevrejske kulture. Na koncertima često izvodi obrade rok pesama i filmskih hitova.",
+    "nazivDog":"Ara Malikian",
+    "slika": "ara.jpg",
+    "cena":3800,
+    "kapacitet":233,
+    "datum":"14.10.2020",
+    "vrstaMuzike":"classical",
+    "vrstaDogadjaja":"concert",
+    "adresa":"Sava centar",
+    "slobodanUlaz":"no"
+
+  }
+
+
+
